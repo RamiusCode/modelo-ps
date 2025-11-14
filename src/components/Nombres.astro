@@ -1,0 +1,169 @@
+---
+// Componente de Nombres - Temática La Princesa y el Sapo
+// Para invitación de 15 años
+// Solo Tailwind y GSAP
+---
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- 👨‍👩‍👧 COMPONENTE NOMBRES - PADRES Y PADRINOS DE 15 AÑOS    -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+
+<section class="relative py-6 px-4">
+  <div class="max-w-5xl mx-auto relative">
+    
+    <!-- 🌸 Adorno floral izquierdo - CENTRADO VERTICALMENTE -->
+    <div 
+      class="absolute left-0 top-1/2 -translate-y-1/2 w-14 sm:w-14 md:w-14 lg:w-14 xl:w-14 pointer-events-none -ml-6 sm:-ml-6 md:-ml-6 lg:-ml-6" 
+      id="adorno-izq"
+    >
+      <img 
+        src="/imagenes/FloresLaterales.webp" 
+        alt="Adorno floral izquierdo" 
+        class="w-full h-auto object-contain" 
+      />
+    </div>
+
+    <!-- 📝 Contenido central -->
+    <div class="max-w-3xl  lg:max-w-sm xl:max-w-sm 2xl:max-w-sm   mx-auto text-center relative z-10 px-6 md:px-8 lg:px-12">
+      
+      <!-- 👔 SECCIÓN: MIS PADRES -->
+      <div id="seccion-padres" class="max-w-xl lg:max-w-xl xl:max-w-xl mx-auto mb-8 sm:mb-10 md:mb-12">
+        <h2 class="font-serif text-xl sm:text-xl md:text-xl lg:text-xl xl:text-xl text-[#D4AF37] font-bold mb-3 sm:mb-4 md:mb-5 italic tracking-wide">
+          MIS PADRES
+        </h2>
+        <div class="space-y-1 sm:space-y-2">
+          <p class="font-serif text-xl sm:text-xl md:text-xl lg:text-xl xl:text-xl text-[#6B8E6B] italic">
+            Carlos Mendoza Guzmán
+          </p>
+          <p class="font-serif text-xl sm:text-xl md:text-xl lg:text-xl xl:text-xl text-[#6B8E6B] italic">
+            Andrea Gutiérrez Álvarez
+          </p>
+        </div>
+      </div>
+
+      <!-- 💍 SECCIÓN: MIS PADRINOS -->
+      <div id="seccion-padrinos" class="max-w-xl lg:max-w-xl xl:max-w-xl mx-auto">
+        <h2 class="font-serif text-xl sm:text-xl md:text-xl lg:text-xl xl:text-xl text-[#D4AF37] font-bold mb-3 sm:mb-4 md:mb-5 tracking-wide">
+          MIS PADRINOS
+        </h2>
+        <div class="space-y-1 sm:space-y-2">
+          <p class="font-serif text-xl sm:text-xl md:text-xl lg:text-xl xl:text-xl text-[#6B8E6B] italic">
+            Luis Alberto Gutiérrez
+          </p>
+          <p class="font-serif text-xl sm:text-xl md:text-xl lg:text-xl xl:text-xl text-[#6B8E6B] italic">
+            María Vargas Rodríguez
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 🌸 Adorno floral derecho - CENTRADO VERTICALMENTE -->
+    <div 
+      class="absolute right-0 top-1/2 -translate-y-1/2 w-14 sm:w-14 md:w-14 lg:w-14 xl:w-14 pointer-events-none -mr-6 sm:-mr-6 md:-mr-6 lg:-mr-6 transform scale-x-[-1]" 
+      id="adorno-der"
+    >
+      <img 
+        src="/imagenes/FloresLaterales.webp" 
+        alt="Adorno floral derecho" 
+        class="w-full h-auto object-contain" 
+      />
+    </div>
+    
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- 🎬 ANIMACIONES CON GSAP                                     -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  if (typeof window !== 'undefined') {
+    document.addEventListener("DOMContentLoaded", () => {
+      console.log("👨‍👩‍👧 Iniciando animaciones de padres y padrinos...");
+
+      // 🎯 ESTADO INICIAL - Todo oculto
+      gsap.set("#seccion-padres", { opacity: 0, y: 30 });
+      gsap.set("#seccion-padrinos", { opacity: 0, y: 30 });
+      gsap.set("#adorno-izq", { opacity: 0, x: -50 });
+      gsap.set("#adorno-der", { opacity: 0, x: 50 });
+
+      // 📍 SCROLLTRIGGER PARA ACTIVAR LA ANIMACIÓN
+      ScrollTrigger.create({
+        trigger: "#seccion-padres",
+        start: "top 80%",
+        end: "bottom 20%",
+        
+        onEnter: () => {
+          console.log("✨ Padres y padrinos apareciendo simultáneamente...");
+          animarSimultaneo();
+        },
+        
+        onLeaveBack: () => {
+          console.log("👋 Ocultando sección de padres y padrinos...");
+          ocultarSimultaneo();
+        },
+      });
+
+      // 🎬 ANIMACIÓN SIMULTÁNEA - TODO AL MISMO TIEMPO
+      function animarSimultaneo() {
+        const tl = gsap.timeline();
+
+        // TODO aparece al mismo tiempo con la misma duración
+        tl.to("#adorno-izq, #adorno-der, #seccion-padres, #seccion-padrinos", {
+          opacity: 1,
+          duration: 1.2,
+          ease: "power2.out",
+        })
+        // Movimientos individuales (simultáneos)
+        .to("#adorno-izq", {
+          x: 0,
+          duration: 1.2,
+          ease: "power3.out",
+        }, "<")
+        .to("#adorno-der", {
+          x: 0,
+          duration: 1.2,
+          ease: "power3.out",
+        }, "<")
+        .to("#seccion-padres, #seccion-padrinos", {
+          y: 0,
+          duration: 1.2,
+          ease: "power2.out",
+        }, "<");
+      }
+
+      // 🔙 ANIMACIÓN DE SALIDA SIMULTÁNEA
+      function ocultarSimultaneo() {
+        const tl = gsap.timeline();
+
+        // TODO desaparece al mismo tiempo
+        tl.to("#adorno-izq, #adorno-der, #seccion-padres, #seccion-padrinos", {
+          opacity: 0,
+          duration: 0.6,
+          ease: "power2.in",
+        })
+        // Movimientos individuales (simultáneos)
+        .to("#adorno-izq", {
+          x: -50,
+          duration: 0.6,
+          ease: "power2.in",
+        }, "<")
+        .to("#adorno-der", {
+          x: 50,
+          duration: 0.6,
+          ease: "power2.in",
+        }, "<")
+        .to("#seccion-padres, #seccion-padrinos", {
+          y: 30,
+          duration: 0.6,
+          ease: "power2.in",
+        }, "<");
+      }
+    });
+  }
+</script>

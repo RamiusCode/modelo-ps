@@ -1,0 +1,248 @@
+---
+// Despedida.astro
+// Componente de despedida con confirmación de asistencia (Fondo transparente)
+---
+
+<section class=" px-4 relative overflow-hidden">
+  
+  <div class="max-w-5xl mx-auto relative z-10">
+    <div class="max-w-3xl sm:max-w-sm lg:max-w-sm mx-auto text-center">
+
+      <div class="flex justify-center mb-8" id="flores-arriba-despedida">
+        <img
+          src="/imagenes/SeparadorDos.webp"
+          alt="Flores decorativas"
+          class="w-48 md:w-48 lg:w-48 h-auto object-contain "
+        />
+      </div>
+
+      <div class="relative rounded-3xl shadow-lg p-8 md:p-8 lg:p-8" id="card-despedida">
+        
+        <div class="absolute top-2 left-2 w-12 h-12 border-t-2 border-l-2 border-[#6B8E6B]/30"></div>
+        <div class="absolute top-2 right-2 w-12 h-12 border-t-2 border-r-2 border-[#6B8E6B]/30"></div>
+        <div class="absolute bottom-2 left-2 w-12 h-12 border-b-2 border-l-2 border-[#6B8E6B]/30"></div>
+        <div class="absolute bottom-2 right-2 w-12 h-12 border-b-2 border-r-2 border-[#6B8E6B]/30"></div>
+
+        <div class="relative z-10">
+
+          <div id="mensaje-despedida">
+            <p class="parrafo-animado font-charm text-xl md:text-xl lg:text-xl text-[#6B8E6B] leading-relaxed mb-6">
+              Con la bendición de Dios y el amor de toda mi familia,
+              <span class="text-[#D4AF37] font-bold">me siento muy feliz</span>
+              de llegar a este momento tan especial de mi vida.
+            </p>
+
+            <p class="parrafo-animado font-charm text-xl md:text-xl lg:text-xl text-[#6B8E6B] leading-relaxed mb-6">
+              Ahora empieza un camino lleno de
+              <span class="text-[#D4AF37] font-bold">sueños e ilusiones</span>
+              que, con mucha fe, humildad y esperanza, deseo cumplir.
+            </p>
+
+            <p class="parrafo-animado font-charm text-xl md:text-xl lg:text-xl text-[#6B8E6B] leading-relaxed mb-6">
+              Quisiera, con inmensa alegría,
+              <span class="text-[#D4AF37] font-bold">compartir este comienzo</span>
+              de esta bella etapa junto a todos ustedes.
+            </p>
+
+            <div class="flex items-center justify-center gap-3 my-4" id="linea-decorativa">
+              <div class="w-16 h-[1px] bg-gradient-to-r from-transparent to-[#6B8E6B]"></div>
+              <svg class="w-6 h-6 text-[#6B8E6B]" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+              </svg>
+              <div class="w-16 h-[1px] bg-gradient-to-l from-transparent to-[#6B8E6B]"></div>
+            </div>
+          </div>
+
+          <div id="seccion-confirmar" class="mt-2">
+            
+            <p class="font-charm text-xl md:text-xl text-[#6B8E6B] leading-relaxed mb-2" id="texto-confirmar">
+              Tu presencia es muy importante para mí.
+              <br />
+              Por favor, <span class="text-[#D4AF37] font-bold">confirma tu asistencia</span> para compartir juntos este día tan especial.
+            </p>
+
+            <div class="flex justify-center pt-10" id="boton-confirmar">
+              <a
+                href="https://wa.me/59178762918?text=Me%20complace%20confirmar%20mi%20asistencia%20para%20los%2015%20a%C3%B1os%20de%20Lucia.%20Nos%20vemos%20el%20s%C3%A1bado%208%20de%20noviembre%2C%20estar%C3%A9%20sin%20falta"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Confirmar asistencia por WhatsApp"
+                title="Confirmar asistencia por WhatsApp"
+              >
+                <img
+                  src="/imagenes/BtnConfirmar.webp"
+                  alt="Confirmar Asistencia"
+                  class="w-60 md:w-64 lg:w-72 h-auto object-contain cursor-pointer transition-transform duration-300 hover:scale-105"
+                />
+              </a>
+            </div>
+
+            <p class="font-charm pt-10 text-2xl md:text-2xl lg:text-2xl text-[#D4AF37] font-bold mb-8" id="mensaje-final">
+              ¡Los espero con mucho cariño!
+            </p>
+          </div>
+
+        </div>
+
+        </div>
+
+    </div>
+  </div>
+</section>
+
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  if (typeof window !== 'undefined') {
+    document.addEventListener("DOMContentLoaded", () => {
+      console.log("💌 Iniciando sección de despedida...");
+
+      // 🎯 ESTADO INICIAL
+      gsap.set("#flores-arriba-despedida", { opacity: 0, y: -30, scale: 0.8 });
+      gsap.set("#card-despedida", { opacity: 0, y: 40, scale: 0.95 });
+      gsap.set(".parrafo-animado", { opacity: 0, y: 30, filter: "blur(5px)" });
+      gsap.set("#linea-decorativa", { opacity: 0, scale: 0.5 });
+      gsap.set("#texto-confirmar", { opacity: 0, y: 20 });
+      gsap.set("#boton-confirmar", { opacity: 0, scale: 0.8, y: 20 });
+      gsap.set("#mensaje-final", { opacity: 0, scale: 0.9, y: 20 });
+
+      // ✨ ANIMACIÓN ELEGANTE DE ENTRADA
+      ScrollTrigger.create({
+        trigger: "#flores-arriba-despedida",
+        start: "top 85%",
+        end: "top 20%",
+        onEnter: () => {
+          const tl = gsap.timeline();
+
+          // 1. Flores superiores
+          tl.to("#flores-arriba-despedida", {
+            opacity: 0.8,
+            y: 0,
+            scale: 1,
+            duration: 0.8,
+            ease: "back.out(1.5)",
+          })
+
+          // 2. Card aparece
+          .to("#card-despedida", {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            duration: 0.9,
+            ease: "power3.out",
+          }, "-=0.5")
+
+          // 3. Párrafos aparecen secuencialmente con efecto blur
+          .to(".parrafo-animado", {
+            opacity: 1,
+            y: 0,
+            filter: "blur(0px)",
+            duration: 0.8,
+            stagger: 0.2, 
+            ease: "power2.out",
+          }, "-=0.4")
+
+          // 4. Línea decorativa y corazón
+          .to("#linea-decorativa", {
+            opacity: 1,
+            scale: 1,
+            duration: 0.6,
+            ease: "back.out(1.5)",
+          }, "-=0.3")
+
+          // 5. Texto de confirmación
+          .to("#texto-confirmar", {
+            opacity: 1,
+            y: 0,
+            duration: 0.7,
+            ease: "power2.out",
+          }, "-=0.2")
+
+          // 6. Botón aparece
+          .to("#boton-confirmar", {
+            opacity: 1,
+            scale: 1,
+            y: 0,
+            duration: 0.7,
+            ease: "back.out(1.5)",
+          }, "-=0.3")
+
+          // 7. Mensaje final
+          .to("#mensaje-final", {
+            opacity: 1,
+            scale: 1,
+            y: 0,
+            duration: 0.8,
+            ease: "elastic.out(1, 0.5)",
+          }, "-=0.2");
+
+          // 🌸 ANIMACIONES CONTINUAS
+          // Corazón latiendo
+          gsap.to("#linea-decorativa svg", {
+            scale: 1.2,
+            duration: 1.5,
+            ease: "sine.inOut",
+            yoyo: true,
+            repeat: -1,
+            delay: 0.5,
+          });
+
+          // Botón pulsando
+          gsap.to("#boton-confirmar img", {
+            scale: 1.05,
+            y: -3,
+            duration: 2,
+            ease: "sine.inOut",
+            yoyo: true,
+            repeat: -1,
+            delay: 0.8,
+          });
+
+          // Mensaje final brillando
+          gsap.to("#mensaje-final", {
+            // El color de la sombra se ajusta al nuevo dorado
+            textShadow: "0 0 15px rgba(212, 175, 55, 0.4)", 
+            duration: 2,
+            ease: "sine.inOut",
+            yoyo: true,
+            repeat: -1,
+            delay: 1,
+          });
+        },
+        onLeaveBack: () => {
+          // Resetear todo
+          gsap.set("#flores-arriba-despedida", { opacity: 0, y: -30, scale: 0.8 });
+          gsap.set("#card-despedida", { opacity: 0, y: 40, scale: 0.95 });
+          gsap.set(".parrafo-animado", { opacity: 0, y: 30, filter: "blur(5px)" });
+          gsap.set("#linea-decorativa", { opacity: 0, scale: 0.5 });
+          gsap.set("#texto-confirmar", { opacity: 0, y: 20 });
+          gsap.set("#boton-confirmar", { opacity: 0, scale: 0.8, y: 20 });
+          gsap.set("#mensaje-final", { opacity: 0, scale: 0.9, y: 20 });
+        },
+      });
+
+      console.log("💌✨ ¡Sección de despedida activada!");
+    });
+  }
+</script>
+
+<style>
+  /* Efecto hover en el card (Ajustado a color verde) */
+  #card-despedida:hover {
+    box-shadow: 0 20px 40px rgba(107, 142, 107, 0.15); 
+    transition: box-shadow 0.5s ease;
+  }
+
+  /* Resaltar palabras importantes (Verde oscuro para el texto principal -> Dorado en hover) */
+  #mensaje-despedida span {
+    transition: all 0.3s ease;
+  }
+
+  #mensaje-despedida span:hover {
+    color: #D4AF37; 
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+  }
+</style>

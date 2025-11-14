@@ -1,0 +1,574 @@
+---
+// Componente Astro para XV Años - Diseño compacto para todas las pantallas
+---
+
+<section class="relative text-black w-full h-screen overflow-hidden flex items-center justify-center">
+  <!-- Contenedor principal con max-width para mantener diseño compacto -->
+  <div class="relative w-full max-w-[480px] h-screen mx-auto">
+    
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <!-- 🌸 FONDO CON IMAGEN DE FONDO PRINCIPAL                      -->
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <div class="absolute inset-0 w-full h-full z-0">
+      <div class="absolute inset-0 w-full h-full" style="background-image: url('/imagenes/fondoPrincipal.png'); background-size: cover; background-position: center;"></div>
+      
+      <img
+        src="/imagenes/Fondo.webp"
+        alt="Fondo mágico"
+        class="w-full h-full absolute top-0 left-0"
+        id="imagen-fondo"
+        style="object-fit: cover; object-position: top center;"
+      />
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <!-- 🌸 FLORES SUPERIORES + CORONA + TÍTULO                      -->
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <div class="absolute top-0 left-0 w-full z-10" id="flores-superiores">
+      <div class="relative w-full flex justify-between items-start">
+        <div id="flores-sup-izq" class="w-36 sm:w-44 flex-shrink-0">
+          <img
+            src="/imagenes/FloresIzquierda.webp"
+            alt="Flores superiores izquierda"
+            class="w-full h-auto object-contain"
+          />
+        </div>
+
+        <div id="flores-sup-der" class="w-36 sm:w-44 flex-shrink-0">
+          <img
+            src="/imagenes/FloresDerecha.webp"
+            alt="Flores superiores derecha"
+            class="w-full h-auto object-contain"
+          />
+        </div>
+      </div>
+
+      <div
+        class="absolute left-1/2 -translate-x-1/2 top-[120px] sm:top-[70px] z-50"
+        id="corona"
+      >
+        <img
+          src="/imagenes/Corona.webp"
+          alt="Corona de quinceañera"
+          class="w-24 sm:w-20 h-auto object-contain mx-auto"
+        />
+      </div>
+
+      <div
+        class="absolute left-1/2 -translate-x-1/2 top-[215px] sm:top-[130px] z-50 px-4"
+        id="titulo-container"
+      >
+        <h1
+          class="font-crimson text-5xl sm:text-3xl sm:py-5 text-verde-quincea tracking-wider text-center whitespace-nowrap"
+          id="titulo"
+        >
+          MIS XV AÑOS
+        </h1>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <!-- 👸 NOMBRE DE LA QUINCEAÑERA                                  -->
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <div class="absolute top-[290px] sm:top-[220px] left-0 w-full">
+      <div class="flex justify-center w-full">
+        <div class="text-center z-10 w-full px-2">
+          <div class="relative w-full" id="nombre-container">
+            <div class="relative z-30">
+              <h2
+                class="font-great-vibes text-verde-quincea tracking-wide drop-shadow-lg break-words nombre-texto"
+                id="nombre-quinceanera"
+              ></h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <!-- 🦋 MARIPOSAS CENTRADAS Y MEJOR DISTRIBUIDAS + PRINCESA      -->
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <div class="absolute bottom-0 right-0 w-full h-[50%] flex justify-end items-end" id="princesa-container">
+      <!-- LADO IZQUIERDO -->
+      <div id="mariposa-1" class="absolute left-[8%] sm:left-[10%] top-[25%] sm:top-[30%] z-10">
+        <img src="/imagenes/MariposaVerde.webp" alt="Mariposa" class="w-12 h-12 sm:w-14 sm:h-14 object-contain mariposa-volando" />
+      </div>
+      <div id="mariposa-2" class="absolute left-[5%] sm:left-[7%] top-[60%] sm:top-[65%] z-10">
+        <img src="/imagenes/MariposaVerde.webp" alt="Mariposa" class="w-14 h-14 sm:w-16 sm:h-16 object-contain mariposa-volando" />
+      </div>
+      <div id="mariposa-3" class="absolute left-[15%] sm:left-[18%] top-[45%] sm:top-[50%] z-10">
+        <img src="/imagenes/MariposaVerde.webp" alt="Mariposa" class="w-10 h-10 sm:w-12 sm:h-12 object-contain mariposa-volando" />
+      </div>
+      
+      <!-- CENTRO -->
+      <div id="mariposa-4" class="absolute left-[35%] sm:left-[38%] top-[20%] sm:top-[25%] z-10">
+        <img src="/imagenes/MariposaVerde.webp" alt="Mariposa" class="w-11 h-11 sm:w-13 sm:h-13 object-contain mariposa-volando" />
+      </div>
+      <div id="mariposa-5" class="absolute left-[45%] sm:left-[48%] top-[50%] sm:top-[55%] z-10">
+        <img src="/imagenes/MariposaVerde.webp" alt="Mariposa" class="w-9 h-9 sm:w-11 sm:h-11 object-contain mariposa-volando" />
+      </div>
+      <div id="mariposa-6" class="absolute left-[28%] sm:left-[40%] top-[70%] sm:top-[75%] z-10">
+        <img src="/imagenes/MariposaVerde.webp" alt="Mariposa" class="w-8 h-10 sm:w-12 sm:h-12 object-contain mariposa-volando" />
+      </div>
+      
+      <!-- LADO DERECHO -->
+      <div id="mariposa-7" class="absolute right-[45%] sm:right-[32%] top-[35%] sm:top-[40%] z-10">
+        <img src="/imagenes/MariposaVerde.webp" alt="Mariposa" class="w-8 h-12 sm:w-14 sm:h-14 object-contain mariposa-volando" />
+      </div>
+      <div id="mariposa-8" class="absolute right-[25%] sm:right-[28%] top-[65%] sm:top-[70%] z-10">
+        <img src="/imagenes/MariposaVerde.webp" alt="Mariposa" class="w-8 h-8 sm:w-10 sm:h-10 object-contain mariposa-volando" />
+      </div>
+
+      <div id="princesa" class="relative z-20 w-[220px] sm:w-[280px] mb-0">
+        <img
+          src="/imagenes/PrincesaTiana.webp"
+          alt="Princesa Tiana"
+          class="w-full h-auto object-contain"
+        />
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <!-- 🌺 FLORES INFERIORES                                         -->
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <div class="absolute left-0 w-full z-30" id="flores-inferiores" style="bottom: -5%;">
+      <img
+        src="/imagenes/FloresAbajo.webp"
+        alt="Flores decorativas inferiores"
+        class="w-full h-auto object-contain"
+      />
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- 🎬 ANIMACIONES CON GSAP                                      -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<script>
+  import { gsap } from "gsap";
+
+  let animacionesEjecutadas = false;
+
+  document.addEventListener("DOMContentLoaded", () => {
+    console.log("🎊 Iniciando animaciones de XV años - Princesa Tiana...");
+
+    if (animacionesEjecutadas) {
+      console.log("⚠️ Animaciones ya ejecutadas");
+      return;
+    }
+
+    animacionesEjecutadas = true;
+
+    const animacionConfig = {
+      flores: { duracion: 1, delay: 0 },
+      corona: { duracion: 1.2, delay: 0.3 },
+      titulo: { duracion: 1, delay: 0.5 },
+      nombre: { duracion: 0.8, delay: 0.8, stagger: 0.06 },
+      princesa: { duracion: 1.5, delay: 1.2 },
+      mariposas: { duracion: 1, delay: 1.4, stagger: 0.15 },
+      floresInf: { duracion: 1, delay: 0 }
+    };
+
+    gsap.config({
+      force3D: true,
+      nullTargetWarn: false
+    });
+
+    const animarFlores = () => {
+      gsap.fromTo(
+        "#flores-sup-izq",
+        { opacity: 0, x: -100, rotation: -15 },
+        { 
+          opacity: 1, 
+          x: 0, 
+          rotation: 0,
+          duration: animacionConfig.flores.duracion, 
+          ease: "power2.out",
+          onComplete: () => {
+            gsap.set("#flores-sup-izq", { clearProps: "all" });
+          }
+        }
+      );
+
+      gsap.fromTo(
+        "#flores-sup-der",
+        { opacity: 0, x: 100, rotation: 15 },
+        { 
+          opacity: 1, 
+          x: 0, 
+          rotation: 0,
+          duration: animacionConfig.flores.duracion, 
+          ease: "power2.out",
+          onComplete: () => {
+            gsap.set("#flores-sup-der", { clearProps: "all" });
+          }
+        }
+      );
+    };
+
+    const animarCorona = () => {
+      gsap.fromTo(
+        "#corona",
+        { opacity: 0, y: -50, scale: 0.3 },
+        {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          duration: animacionConfig.corona.duracion,
+          ease: "elastic.out(1, 0.5)",
+          delay: animacionConfig.corona.delay,
+          onComplete: () => {
+            gsap.set("#corona", { scale: 1, clearProps: "transform" });
+          }
+        }
+      );
+
+      gsap.to("#corona", {
+        y: -3,
+        duration: 2.5,
+        ease: "sine.inOut",
+        yoyo: true,
+        repeat: -1,
+        delay: 2
+      });
+    };
+
+    const animarTitulo = () => {
+      gsap.fromTo(
+        "#titulo",
+        { opacity: 0, y: -30, scale: 0.8 },
+        {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          duration: animacionConfig.titulo.duracion,
+          ease: "back.out(1.4)",
+          delay: animacionConfig.titulo.delay,
+          onComplete: () => {
+            gsap.set("#titulo", { clearProps: "all" });
+          }
+        }
+      );
+    };
+
+    const animarNombre = (texto) => {
+      const contenedor = document.getElementById("nombre-quinceanera");
+      if (!contenedor) return;
+
+      contenedor.innerHTML = texto
+        .split("")
+        .map((letra) =>
+          `<span class="letra-cascada" style="opacity: 0; display: inline-block;">${letra === " " ? "&nbsp;" : letra}</span>`
+        )
+        .join("");
+
+      gsap.fromTo(
+        ".letra-cascada",
+        { opacity: 0, y: 30, scale: 0.5, rotation: 10 },
+        {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          rotation: 0,
+          duration: animacionConfig.nombre.duracion,
+          ease: "elastic.out(1, 0.6)",
+          stagger: { each: animacionConfig.nombre.stagger, from: "start" },
+          delay: animacionConfig.nombre.delay,
+          onComplete: () => {
+            gsap.set(".letra-cascada", { clearProps: "transform" });
+          }
+        }
+      );
+    };
+
+    const animarPrincesa = () => {
+      gsap.fromTo(
+        "#princesa",
+        { opacity: 0, x: 150, y: 30, scale: 0.7 },
+        {
+          opacity: 1,
+          x: 0,
+          y: 0,
+          scale: 1,
+          duration: animacionConfig.princesa.duracion,
+          ease: "power3.out",
+          delay: animacionConfig.princesa.delay,
+          onComplete: () => {
+            gsap.set("#princesa", { scale: 1, clearProps: "transform" });
+          }
+        }
+      );
+
+      gsap.to("#princesa", {
+        y: -8,
+        duration: 3.5,
+        ease: "sine.inOut",
+        yoyo: true,
+        repeat: -1,
+        delay: 2
+      });
+    };
+
+    const animarMariposas = () => {
+      const mariposas = [
+        "#mariposa-1", "#mariposa-2", "#mariposa-3", "#mariposa-4", 
+        "#mariposa-5", "#mariposa-6", "#mariposa-7", "#mariposa-8"
+      ];
+      const isMobile = window.innerWidth < 640;
+
+      mariposas.forEach((mariposa, index) => {
+        gsap.fromTo(
+          mariposa,
+          { 
+            opacity: 0, 
+            scale: 0,
+            x: -50,
+            y: -50,
+            rotation: -180
+          },
+          {
+            opacity: 1,
+            scale: 1,
+            x: 0,
+            y: 0,
+            rotation: 0,
+            duration: animacionConfig.mariposas.duracion,
+            ease: "back.out(1.5)",
+            delay: animacionConfig.mariposas.delay + index * animacionConfig.mariposas.stagger,
+            onComplete: () => {
+              gsap.set(mariposa, { scale: 1 });
+            }
+          }
+        );
+
+        const timeline = gsap.timeline({ 
+          repeat: -1,
+          delay: 2 + index * 0.3
+        });
+
+        timeline.to(mariposa, {
+          x: isMobile ? "random(-15, 15)" : "random(-25, 25)",
+          y: isMobile ? "random(-12, 12)" : "random(-20, 20)",
+          rotation: "random(-15, 15)",
+          duration: "random(2.5, 3.5)",
+          ease: "sine.inOut",
+        })
+        .to(mariposa, {
+          x: isMobile ? "random(-15, 15)" : "random(-25, 25)",
+          y: isMobile ? "random(-12, 12)" : "random(-20, 20)",
+          rotation: "random(-15, 15)",
+          duration: "random(2.5, 3.5)",
+          ease: "sine.inOut",
+        })
+        .to(mariposa, {
+          x: 0,
+          y: 0,
+          rotation: 0,
+          duration: "random(2.5, 3.5)",
+          ease: "sine.inOut",
+        });
+
+        gsap.to(`${mariposa} img`, {
+          scaleX: 0.9,
+          duration: 0.15,
+          ease: "sine.inOut",
+          yoyo: true,
+          repeat: -1,
+          delay: 2 + index * 0.2
+        });
+      });
+    };
+
+    const animarFloresInferiores = () => {
+      gsap.fromTo(
+        "#flores-inferiores",
+        { opacity: 0, y: 50 },
+        {
+          opacity: 0.9,
+          y: 0,
+          duration: animacionConfig.floresInf.duracion,
+          ease: "power2.out",
+          delay: animacionConfig.floresInf.delay
+        }
+      );
+    };
+
+    animarFlores();
+    animarCorona();
+    animarTitulo();
+    animarNombre("Valentina");
+    animarPrincesa();
+    animarMariposas();
+    animarFloresInferiores();
+
+    console.log("✨ Animaciones completadas!");
+  });
+</script>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- 🎨 ESTILOS CSS                                               -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<style>
+  :root {
+    --verde-quincea: #4a6741;
+    --sombra-nombre: 2px 2px 4px rgba(255, 255, 255, 0.3);
+  }
+
+  * {
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  html,
+  body {
+    overflow-x: hidden;
+    overflow-y: auto;
+    max-width: 100vw;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    height: 100%;
+    touch-action: pan-y;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    background-color: #f5f5f5;
+  }
+
+  section {
+    width: 100vw;
+    height: 100vh;
+    min-height: 100vh;
+    max-width: 100vw;
+    position: relative;
+    overflow: visible !important;
+    touch-action: pan-y;
+    -webkit-user-select: none;
+    user-select: none;
+  }
+
+  /* Contenedor principal limitado a max-width para diseño compacto */
+  section > div {
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+  }
+
+  #flores-superiores,
+  #nombre-container,
+  #princesa-container,
+  #corona,
+  #princesa,
+  #mariposa-1,
+  #mariposa-2,
+  #mariposa-3,
+  #mariposa-4,
+  #mariposa-5,
+  #mariposa-6,
+  #mariposa-7,
+  #mariposa-8,
+  #flores-sup-izq,
+  #flores-sup-der,
+  #flores-inferiores,
+  #titulo {
+    will-change: transform, opacity;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+  }
+
+  #imagen-fondo {
+    object-fit: cover;
+    object-position: center;
+    pointer-events: none;
+  }
+
+  #flores-superiores img,
+  #flores-sup-der img {
+    opacity: 1 !important;
+  }
+
+  #flores-inferiores {
+    transform: translateZ(0);
+    overflow: visible;
+    bottom: -5% !important;
+  }
+  
+  #flores-inferiores img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .mariposa-volando {
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+    transition: filter 0.3s ease;
+  }
+
+  .mariposa-volando:hover {
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3)) brightness(1.1);
+  }
+
+  .text-verde-quincea {
+    color: var(--verde-quincea);
+  }
+
+  .nombre-texto {
+    font-size: clamp(5rem, 10vw, 10rem) !important;
+    text-shadow: var(--sombra-nombre);
+    line-height: 1;
+  }
+
+  /* ADICIONADO ESTO ES PARA TAMAÑO DE TABLE COMPUTADORA EL NOMBRE */
+  /* Tamaño para tablets (pantallas medianas) */
+@media (min-width: 768px) {
+  .nombre-texto {
+    font-size: clamp(2rem, 12vw, 14rem) !important;
+  }
+}
+
+/* Tamaño para computadoras (pantallas grandes) */
+@media (min-width: 1024px) {
+  .nombre-texto {
+    font-size: clamp(1rem, 5vw, 5rem) !important;
+  }
+}
+
+  /* TERMINA ESTO ES PARA TAMAÑO DE TABLE COMPUTADORA EL NOMBRE */
+
+
+  .letra-cascada {
+    transition: all 0.3s ease;
+    position: relative;
+    cursor: default;
+    display: inline-block;
+    touch-action: none;
+  }
+
+  .letra-cascada:hover {
+    transform: translateY(-5px) scale(1.15) !important;
+    text-shadow: 0 0 20px rgba(74, 103, 65, 0.6), 0 0 30px rgba(255, 255, 255, 0.4) !important;
+    filter: brightness(1.2) !important;
+  }
+
+  @keyframes brillo-magico {
+    0%, 100% { filter: brightness(1); }
+    50% { filter: brightness(1.3) drop-shadow(0 0 10px rgba(255, 255, 255, 0.5)); }
+  }
+
+  #corona img {
+    animation: brillo-magico 3s ease-in-out infinite;
+  }
+
+  @media (max-width: 640px) {
+    section {
+      max-height: 100vh;
+    }
+  }
+
+  @media (max-width: 375px) {
+    #titulo {
+       font-size: clamp(2rem, 6vw, 5rem) !important;
+    }
+  }
+</style>

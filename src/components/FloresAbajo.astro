@@ -1,0 +1,272 @@
+---
+// CierreInvitacion.astro
+// Componente de cierre final, ajustado al final de la página (compacto) con mariposas animadas.
+---
+
+<section class="relative text-black w-full overflow-hidden flex items-center justify-center pt-0 pb-0">
+  
+  <div class="relative w-full max-w-[480px] mx-auto z-10">
+    
+    <div class="relative w-full z-10" id="contenedor-flores-silueta">
+      
+      <div class="relative w-full flex justify-between items-start" id="contenedor-flex-flores">
+        
+        <div id="flores-izq-inferiores" class="w-36 sm:w-44 flex-shrink-0">
+          <img
+            src="/imagenes/FloresIzquierdaAbajo.webp"
+            alt="Flores decorativas superiores izquierda"
+            class="w-full h-auto object-contain"
+          />
+        </div>
+
+        <div id="mariposa-cierre-1" class="absolute left-[20%] top-[10%] z-20">
+          <img src="/imagenes/MariposaVerde.webp" alt="Mariposa" class="w-10 h-10 object-contain mariposa-volando-cierre" />
+        </div>
+        <div id="mariposa-cierre-2" class="absolute left-[5%] top-[50%] z-20">
+          <img src="/imagenes/MariposaVerde.webp" alt="Mariposa" class="w-8 h-8 object-contain mariposa-volando-cierre " />
+        </div>
+        
+        <div id="mariposa-cierre-3" class="absolute right-[20%] top-[15%] z-20">
+          <img src="/imagenes/MariposaVerde.webp" alt="Mariposa" class="w-12 h-12 object-contain mariposa-volando-cierre transform scale-x-[-1]" />
+        </div>
+        <div id="mariposa-cierre-4" class="absolute right-[10%] top-[40%] z-20">
+          <img src="/imagenes/MariposaVerde.webp" alt="Mariposa" class="w-9 h-9 object-contain mariposa-volando-cierre transform scale-x-[-1]" />
+        </div>
+        
+        <div
+          class="absolute left-1/2 top-0 z-20" id="silueta-central"
+        >
+          <img
+            src="/imagenes/SiluetaQuince.webp"
+            alt="Silueta de Quinceañera"
+            class="w-32 sm:w-40 h-auto object-contain mx-auto drop-shadow-lg"
+          />
+        </div>
+
+        <div id="flores-der-inferiores" class="w-36 sm:w-44 flex-shrink-0">
+          <img
+            src="/imagenes/FloresDerechaAbajo.webp"
+            alt="Flores decorativas superiores derecha"
+            class="w-full h-auto object-contain"
+          />
+        </div>
+        
+      </div>
+      
+    </div>
+    
+  </div>
+</section>
+
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+  
+  // Lista de mariposas para las animaciones
+  const MARIPOSAS_CIERRE = [
+    "#mariposa-cierre-1",
+    "#mariposa-cierre-2",
+    "#mariposa-cierre-3",
+    "#mariposa-cierre-4",
+  ];
+
+  // Función de animación de mariposas reutilizada y adaptada
+  const animarMariposasCierre = (delayInicio) => {
+      const isMobile = window.innerWidth < 640;
+      const stagger = 0.15;
+      const duration = 1.0;
+
+      MARIPOSAS_CIERRE.forEach((mariposa, index) => {
+          
+          // Animación de entrada
+          gsap.fromTo(
+              mariposa,
+              { 
+                opacity: 0, 
+                scale: 0,
+                x: index % 2 === 0 ? -50 : 50, // Vienen de lados opuestos
+                y: -50,
+                rotation: index % 2 === 0 ? -180 : 180,
+              },
+              {
+                opacity: 1,
+                scale: 1,
+                x: 0,
+                y: 0,
+                rotation: 0,
+                duration: duration,
+                ease: "back.out(1.5)",
+                delay: delayInicio + index * stagger,
+                onComplete: () => {
+                  gsap.set(mariposa, { scale: 1 });
+                }
+              }
+          );
+
+          // Animación continua de aleteo y vuelo
+          const timeline = gsap.timeline({ 
+              repeat: -1,
+              delay: delayInicio + 2 + index * 0.3 // Inicia después de la animación de entrada
+          });
+
+          timeline.to(mariposa, {
+              x: isMobile ? "random(-15, 15)" : "random(-25, 25)",
+              y: isMobile ? "random(-12, 12)" : "random(-20, 20)",
+              rotation: "random(-15, 15)",
+              duration: "random(2.5, 3.5)",
+              ease: "sine.inOut",
+          })
+          .to(mariposa, {
+              // Movimiento aleatorio continuo.
+              x: isMobile ? "random(-15, 15)" : "random(-25, 25)",
+              y: isMobile ? "random(-12, 12)" : "random(-20, 20)",
+              rotation: "random(-15, 15)",
+              duration: "random(2.5, 3.5)",
+              ease: "sine.inOut",
+          });
+
+          // Aleteo (escala en X)
+          gsap.to(`${mariposa} img`, {
+              scaleX: 0.9,
+              duration: 0.15,
+              ease: "sine.inOut",
+              yoyo: true,
+              repeat: -1,
+              delay: delayInicio + 2 + index * 0.2
+          });
+      });
+  };
+
+  document.addEventListener("DOMContentLoaded", () => {
+    console.log("🌸 Iniciando animaciones de Cierre de Invitación (con mariposas)...");
+
+    gsap.config({
+      force3D: true,
+      nullTargetWarn: false
+    });
+
+    // Estado inicial de los elementos
+    gsap.set(["#flores-izq-inferiores", "#flores-der-inferiores"], { opacity: 0, y: -20 });
+    gsap.set("#silueta-central", { opacity: 0, scale: 0.8, y: -10 });
+    gsap.set(MARIPOSAS_CIERRE, { opacity: 0, scale: 0 }); // Ocultar mariposas al inicio
+
+    // Animación de entrada al hacer scroll
+    ScrollTrigger.create({
+      trigger: "#contenedor-flores-silueta",
+      start: "top 85%", 
+      onEnter: () => {
+        const tl = gsap.timeline({
+            delay: 0.3, 
+        });
+
+        // 1. Animación de entrada para las flores
+        tl.fromTo(
+          ["#flores-izq-inferiores", "#flores-der-inferiores"],
+          { opacity: 0, y: -20 },
+          { 
+            opacity: 1, 
+            y: 0, 
+            duration: 1, 
+            ease: "power2.out"
+          },
+          0
+        );
+
+        // 2. Animación de entrada para la silueta
+        tl.fromTo(
+          "#silueta-central",
+          { opacity: 0, scale: 0.8, y: -10 },
+          {
+            opacity: 1,
+            scale: 1,
+            y: 0,
+            duration: 1.2,
+            ease: "elastic.out(1, 0.5)",
+          },
+          0.5
+        );
+        
+        // 3. Iniciar la animación de mariposas después de la silueta
+        animarMariposasCierre(1.0); // Retraso de 1.0s después de iniciar el ScrollTrigger
+
+        // 4. Animación continua para la silueta (flotando ligeramente)
+        gsap.to("#silueta-central", {
+            y: 5,
+            duration: 3,
+            ease: "sine.inOut",
+            yoyo: true,
+            repeat: -1,
+            delay: 2 
+        });
+      },
+      onLeaveBack: () => {
+        // Resetear la animación
+        gsap.set(["#flores-izq-inferiores", "#flores-der-inferiores"], { opacity: 0, y: -20 });
+        gsap.set("#silueta-central", { opacity: 0, scale: 0.8, y: -10 });
+        gsap.set(MARIPOSAS_CIERRE, { opacity: 0, scale: 0 }); // Resetear mariposas
+      }
+    });
+
+    console.log("✨ Componente de cierre con mariposas ajustado!");
+  });
+</script>
+
+
+<style>
+  section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent !important;
+    /* Aseguramos que no haya padding o margin extra en la sección */
+    padding: 0 !important;
+    margin: 0 !important;
+    /* Importante: permite que la sección se ajuste al contenido */
+    height: auto !important; 
+    min-height: 0 !important;
+  }
+
+  #flores-izq-inferiores,
+  #flores-der-inferiores,
+  #silueta-central {
+    will-change: transform, opacity;
+  }
+  
+  /* Estilos para las mariposas de CIERRE */
+  .mariposa-volando-cierre {
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+    transition: filter 0.3s ease;
+    will-change: transform, opacity;
+  }
+
+  #contenedor-flex-flores {
+    align-items: flex-start;
+    position: relative;
+    padding-bottom: 0px; 
+    /* AJUSTE CLAVE: Reducimos la altura mínima para ser más compacto */
+    min-height: 180px; 
+  }
+
+  /* Si las mariposas siguen apareciendo recortadas, prueba con: */
+  /* min-height: 200px; */
+
+  #silueta-central {
+    position: absolute; 
+    top: 0; 
+    left: 50%;
+    transform: translateX(-50%) !important; 
+  }
+
+  /* Ajuste de la animación GSAP para compensar el transform original de Tailwind */
+  .gsap-transform {
+    transform: none !important; 
+  }
+
+  #silueta-central img {
+    max-height: 100%;
+    max-width: 100%;
+    display: block;
+  }
+</style>
