@@ -408,7 +408,7 @@
 <!-- ═══════════════════════════════════════════════════════════ -->
 <!-- 🎨 ESTILOS CSS                                               -->
 <!-- ═══════════════════════════════════════════════════════════ -->
-<style>
+<!-- <style>
   :root {
     --verde-quincea: #4a6741;
     --sombra-nombre: 2px 2px 4px rgba(255, 255, 255, 0.3);
@@ -536,6 +536,150 @@
 
   /* TERMINA ESTO ES PARA TAMAÑO DE TABLE COMPUTADORA EL NOMBRE */
 
+
+  .letra-cascada {
+    transition: all 0.3s ease;
+    position: relative;
+    cursor: default;
+    display: inline-block;
+    touch-action: none;
+  }
+
+  .letra-cascada:hover {
+    transform: translateY(-5px) scale(1.15) !important;
+    text-shadow: 0 0 20px rgba(74, 103, 65, 0.6), 0 0 30px rgba(255, 255, 255, 0.4) !important;
+    filter: brightness(1.2) !important;
+  }
+
+  @keyframes brillo-magico {
+    0%, 100% { filter: brightness(1); }
+    50% { filter: brightness(1.3) drop-shadow(0 0 10px rgba(255, 255, 255, 0.5)); }
+  }
+
+  #corona img {
+    animation: brillo-magico 3s ease-in-out infinite;
+  }
+
+  @media (max-width: 640px) {
+    section {
+      max-height: 100vh;
+    }
+  }
+
+  @media (max-width: 375px) {
+    #titulo {
+       font-size: clamp(2rem, 6vw, 5rem) !important;
+    }
+  }
+</style> -->
+
+
+<style>
+  :root {
+    --verde-quincea: #4a6741;
+    --sombra-nombre: 2px 2px 4px rgba(255, 255, 255, 0.3);
+  }
+
+  * {
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  section {
+    width: 100vw;
+    height: 100vh;
+    min-height: 100vh;
+    max-width: 100vw;
+    position: relative;
+    overflow: visible;
+    touch-action: pan-y;
+  }
+
+  /* Contenedor principal limitado a max-width para diseño compacto */
+  section > div {
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+  }
+
+  #flores-superiores,
+  #nombre-container,
+  #princesa-container,
+  #corona,
+  #princesa,
+  #mariposa-1,
+  #mariposa-2,
+  #mariposa-3,
+  #mariposa-4,
+  #mariposa-5,
+  #mariposa-6,
+  #mariposa-7,
+  #mariposa-8,
+  #flores-sup-izq,
+  #flores-sup-der,
+  #flores-inferiores,
+  #titulo {
+    will-change: transform, opacity;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+  }
+
+  #imagen-fondo {
+    object-fit: cover;
+    object-position: center;
+    pointer-events: none;
+  }
+
+  #flores-superiores img,
+  #flores-sup-der img {
+    opacity: 1 !important;
+  }
+
+  #flores-inferiores {
+    transform: translateZ(0);
+    overflow: visible;
+    bottom: -5% !important;
+  }
+  
+  #flores-inferiores img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .mariposa-volando {
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+    transition: filter 0.3s ease;
+  }
+
+  .mariposa-volando:hover {
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3)) brightness(1.1);
+  }
+
+  .text-verde-quincea {
+    color: var(--verde-quincea);
+  }
+
+  .nombre-texto {
+    font-size: clamp(5rem, 10vw, 10rem) !important;
+    text-shadow: var(--sombra-nombre);
+    line-height: 1;
+  }
+
+  /* Tamaño para tablets (pantallas medianas) */
+  @media (min-width: 768px) {
+    .nombre-texto {
+      font-size: clamp(2rem, 12vw, 14rem) !important;
+    }
+  }
+
+  /* Tamaño para computadoras (pantallas grandes) */
+  @media (min-width: 1024px) {
+    .nombre-texto {
+      font-size: clamp(1rem, 5vw, 5rem) !important;
+    }
+  }
 
   .letra-cascada {
     transition: all 0.3s ease;
