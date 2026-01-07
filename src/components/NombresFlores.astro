@@ -133,7 +133,7 @@
       <!-- CENTRO -->
       <div
         id="mariposa-4"
-        class="absolute left-[35%] sm:left-[38%] top-[20%] sm:top-[25%] z-10"
+        class="absolute left-[25%] sm:left-[38%] top-[30%] sm:top-[25%] z-10"
       >
         <img
           src="/imagenes/MariposaVerde.webp"
@@ -324,12 +324,26 @@
       const contenedor = document.getElementById("nombre-quinceanera");
       if (!contenedor) return;
 
-      contenedor.innerHTML = texto
-        .split("")
-        .map(
-          (letra) =>
-            `<span class="letra-cascada" style="opacity: 0; display: inline-block;">${letra === " " ? "&nbsp;" : letra}</span>`,
-        )
+      const lineas = texto.split("|");
+
+      contenedor.innerHTML = lineas
+        .map((linea, index) => {
+          const letras = linea
+            .split("")
+            .map(
+              (letra) =>
+                `<span class="letra-cascada" style="opacity: 0; display: inline-block;">${
+                  letra === " " ? "&nbsp;" : letra
+                }</span>`,
+            )
+            .join("");
+          // Añadimos margen inferior a la primera línea para separarla
+          const style =
+            index < lineas.length - 1
+              ? "display: block; margin-bottom: 0.5em;"
+              : "display: block;";
+          return `<div style="${style}">${letras}</div>`;
+        })
         .join("");
 
       gsap.fromTo(
@@ -475,7 +489,7 @@
     animarFlores();
     animarCorona();
     animarTitulo();
-    animarNombre("Jhasmin Gabriela");
+    animarNombre("Jhasmin|Gabriela");
     animarPrincesa();
     animarMariposas();
     animarFloresInferiores();
@@ -739,8 +753,14 @@
     color: var(--verde-quincea);
   }
 
-  .nombre-texto {
+  /* .nombre-texto {
     font-size: clamp(5rem, 10vw, 10rem) !important;
+    text-shadow: var(--sombra-nombre);
+    line-height: 1;
+  } */
+
+  .nombre-texto {
+    font-size: clamp(4rem, 8vw, 8rem) !important; /* ← MÁS PEQUEÑO */
     text-shadow: var(--sombra-nombre);
     line-height: 1;
   }

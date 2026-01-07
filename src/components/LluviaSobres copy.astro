@@ -1,7 +1,7 @@
 ---
 // LluviaSobres.astro
 // Temática La Princesa y el Sapo
-// Lluvia de sobres con QR grande y visible
+// Lluvia de sobres con QR para transferencias
 ---
 
 <section class="relative py-8 px-4 overflow-hidden">
@@ -28,29 +28,35 @@
       </p>
     </div>
 
-    <div
-      class="flex justify-center max-w-lg mx-auto mb-8 px-4"
-      id="contenedor-qr"
-    >
+    <div class="flex justify-center max-w-3xl mx-auto mb-8" id="contenedor-qr">
       <div
-        class="bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl border-4 border-[#D4AF37] md:p-10 w-full"
+        class="bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border-2 border-[#D4AF37] w-full md:w-1/2 lg:w-1/2"
         id="qr-card-1"
       >
-        <!-- QR CODE - TAMAÑO COMPLETO -->
-        <div class="bg-white rounded-xl mb-6 flex items-center justify-center">
+        <!-- <div class="mb-4">
+          <h3
+            class="font-charm text-xl md:text-xl text-[#D4AF37] font-bold mb-2"
+          >
+            Banco Nacional
+          </h3>
+          <p class="font-charm text-sm text-[#6B8E6B]">
+            Andrea Gutiérrez Álvarez
+          </p>
+        </div> -->
+
+        <div
+          class="bg-white rounded-xl p-4 mb-3 flex items-center justify-center"
+        >
           <img
             src="/imagenes/QR.webp"
             alt="QR Banco Nacional"
-            class="w-full h-auto max-w-sm object-contain"
+            class="w-48 h-48 object-contain"
           />
         </div>
 
-        <!-- INFORMACIÓN DE CUENTA -->
-        <!-- <div class="mt-4">
-          <p class="font-charm text-lg md:text-xl text-[#6B8E6B] font-semibold">
-            Cuenta: 1234-5678-9012-3456
-          </p>
-        </div> -->
+        <p class="font-charm text-xs text-[#6B8E6B]">
+          Cuenta: 1234-5678-9012-3456
+        </p>
       </div>
     </div>
 
@@ -76,7 +82,7 @@
       gsap.set("#separador-lluvia", { opacity: 0, scale: 0.8 });
       gsap.set("#titulo-lluvia", { opacity: 0, y: 30 });
       gsap.set("#contenedor-qr", { opacity: 0, y: 40 });
-      gsap.set("#qr-card-1", { scale: 0.8 });
+      gsap.set("#qr-card-1", { x: 0, rotation: 0, scale: 0.8 });
       gsap.set("#nota-lluvia", { opacity: 0, y: 20 });
 
       // 📍 SCROLLTRIGGER
@@ -96,10 +102,10 @@
         },
       });
 
-      // 🎬 ANIMACIÓN DE ENTRADA
+      // 🎬 ANIMACIÓN DE ENTRADA (Aparecen al mismo tiempo)
       function animarEntrada() {
         const tl = gsap.timeline();
-        const duration = 0.8;
+        const duration = 0.8; // Duración común para todos los elementos
 
         tl.to(
           "#separador-lluvia",
@@ -110,7 +116,7 @@
             ease: "back.out(1.5)",
           },
           0,
-        )
+        ) // Comienza en el tiempo 0
           .to(
             "#titulo-lluvia",
             {
@@ -120,7 +126,7 @@
               ease: "power3.out",
             },
             0,
-          )
+          ) // Comienza en el tiempo 0
           .to(
             "#contenedor-qr",
             {
@@ -130,7 +136,7 @@
               ease: "power3.out",
             },
             0,
-          )
+          ) // Comienza en el tiempo 0
           .to(
             "#qr-card-1",
             {
@@ -139,7 +145,7 @@
               ease: "elastic.out(1, 0.5)",
             },
             0,
-          )
+          ) // Comienza en el tiempo 0
           .to(
             "#nota-lluvia",
             {
@@ -149,10 +155,10 @@
               ease: "power2.out",
             },
             0,
-          );
+          ); // Comienza en el tiempo 0
       }
 
-      // 🔙 ANIMACIÓN DE SALIDA
+      // 🔙 ANIMACIÓN DE SALIDA (Se mantiene secuencial, pero también puedes hacerla simultánea usando '0' o '<')
       function animarSalida() {
         const tl = gsap.timeline();
 
@@ -163,7 +169,6 @@
             duration: 0.5,
             ease: "power2.in",
           },
-          0,
         ).to(
           "#qr-card-1",
           {
@@ -171,7 +176,7 @@
             duration: 0.5,
             ease: "power2.in",
           },
-          0,
+          "<",
         );
       }
 
@@ -181,11 +186,7 @@
 </script>
 
 <style>
-  .font-charm {
-    font-family: "Charm", cursive;
-  }
-
-  /* Efecto hover en la tarjeta QR */
+  /* Efecto glassmorphism para las tarjetas */
   #qr-card-1 {
     transition:
       transform 0.3s ease,
@@ -193,7 +194,7 @@
   }
 
   #qr-card-1:hover {
-    transform: translateY(-5px) scale(1.02);
-    box-shadow: 0 20px 40px rgba(212, 175, 55, 0.4);
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(212, 175, 55, 0.3);
   }
 </style>

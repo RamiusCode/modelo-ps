@@ -1,101 +1,177 @@
-<!-- VERSIÓN SIN FONDO -->
-<!-- <section class="py-4 md:py-16 relative overflow-hidden"> -->
- <section class="pt-8 pb-6 relative overflow-hidden"></section>
-  <div class="max-w-6xl mx-auto relative px-4">
-    
-    <!-- TEXTO SUPERIOR ELEGANTE -->
-    <div class="text-center mb-6 sm:mb-8" id="texto-superior">
-      <h3 class="font-great-vibes text-3xl sm:text-3xl md:text-3xl lg:text-3xl text-[#6B8E6B] mb-2">
-        Nuestro día mágico
-      </h3>
-      <p class="font-charm text-base sm:text-base md:text-base text-[#D4AF37] italic flex items-center justify-center gap-2 sm:gap-3">
-        <img src="imagenes/Sapo.webp" alt="Sapo" class="w-6 h-6 sm:w-6 sm:h-6 object-contain animate-bounce" style="animation-duration: 2s;" />
-        Un cuento que comienza
-        <img src="imagenes/Sapo.webp" alt="Sapo" class="w-6 h-6 sm:w-6 sm:h-6 object-contain animate-bounce " style="animation-duration: 2s; animation-delay: 0.3s;" />
-      </p>
+<!-- VERSIÓN SIN FONDO --><!-- <section class="py-4 md:py-16 relative overflow-hidden"> -->
+<section class="pt-8 pb-6 relative overflow-hidden"></section>
+<div class="max-w-6xl mx-auto relative px-4">
+  <!-- TEXTO SUPERIOR ELEGANTE -->
+  <div class="text-center mb-6 sm:mb-8" id="texto-superior">
+    <h3
+      class="font-great-vibes text-3xl sm:text-3xl md:text-3xl lg:text-3xl text-[#6B8E6B] mb-2"
+    >
+      Nuestro día mágico
+    </h3>
+    <p
+      class="font-charm text-base sm:text-base md:text-base text-[#D4AF37] italic flex items-center justify-center gap-2 sm:gap-3"
+    >
+      <img
+        src="imagenes/Sapo.webp"
+        alt="Sapo"
+        class="w-6 h-6 sm:w-6 sm:h-6 object-contain animate-bounce"
+        style="animation-duration: 2s;"
+      />
+      Un cuento que comienza
+      <img
+        src="imagenes/Sapo.webp"
+        alt="Sapo"
+        class="w-6 h-6 sm:w-6 sm:h-6 object-contain animate-bounce"
+        style="animation-duration: 2s; animation-delay: 0.3s;"
+      />
+    </p>
+  </div>
+
+  <!-- CONTENEDOR PRINCIPAL -->
+  <div class="relative">
+    <!-- DECORACIÓN IZQUIERDA: HOJAS DE NENÚFAR -->
+    <div
+      class="absolute left-0 top-1/2 -translate-y-1/2 w-20 sm:w-20 md:w-20 pointer-events-none z-0 -ml-10 sm:-ml-10 md:-ml-10"
+      id="deco-izq"
+    >
+      <svg viewBox="0 0 120 120" class="w-full h-auto opacity-70">
+        <ellipse cx="60" cy="60" rx="50" ry="35" fill="#6B8E6B" opacity="0.6"
+        ></ellipse>
+        <ellipse cx="60" cy="60" rx="40" ry="28" fill="#D4AF37" opacity="0.3"
+        ></ellipse>
+        <circle cx="60" cy="60" r="12" fill="#D4AF37" opacity="0.8"></circle>
+      </svg>
     </div>
 
-    <!-- CONTENEDOR PRINCIPAL -->
-    <div class="relative">
-      
-      <!-- DECORACIÓN IZQUIERDA: HOJAS DE NENÚFAR -->
-      <div class="absolute left-0 top-1/2 -translate-y-1/2 w-20 sm:w-20 md:w-20 pointer-events-none z-0 -ml-10 sm:-ml-10 md:-ml-10" id="deco-izq">
-        <svg viewBox="0 0 120 120" class="w-full h-auto opacity-70">
-          <ellipse cx="60" cy="60" rx="50" ry="35" fill="#6B8E6B" opacity="0.6"/>
-          <ellipse cx="60" cy="60" rx="40" ry="28" fill="#D4AF37" opacity="0.3"/>
-          <circle cx="60" cy="60" r="12" fill="#D4AF37" opacity="0.8"/>
-        </svg>
-      </div>
+    <!-- DECORACIÓN DERECHA: HOJAS DE NENÚFAR -->
+    <div
+      class="absolute right-0 top-1/2 -translate-y-1/2 w-20 sm:w-20 md:w-20 pointer-events-none z-0 -mr-10 sm:-mr-10 md:-mr-10"
+      id="deco-der"
+    >
+      <svg viewBox="0 0 120 120" class="w-full h-auto opacity-70">
+        <ellipse cx="60" cy="60" rx="50" ry="35" fill="#6B8E6B" opacity="0.6"
+        ></ellipse>
+        <ellipse cx="60" cy="60" rx="40" ry="28" fill="#D4AF37" opacity="0.3"
+        ></ellipse>
+        <circle cx="60" cy="60" r="12" fill="#D4AF37" opacity="0.8"></circle>
+      </svg>
+    </div>
 
-      <!-- DECORACIÓN DERECHA: HOJAS DE NENÚFAR -->
-      <div class="absolute right-0 top-1/2 -translate-y-1/2 w-20 sm:w-20 md:w-20 pointer-events-none z-0 -mr-10 sm:-mr-10 md:-mr-10" id="deco-der">
-        <svg viewBox="0 0 120 120" class="w-full h-auto opacity-70">
-          <ellipse cx="60" cy="60" rx="50" ry="35" fill="#6B8E6B" opacity="0.6"/>
-          <ellipse cx="60" cy="60" rx="40" ry="28" fill="#D4AF37" opacity="0.3"/>
-          <circle cx="60" cy="60" r="12" fill="#D4AF37" opacity="0.8"/>
-        </svg>
-      </div>
-      
-      <!-- CARD PRINCIPAL CON GLASS EFFECT MEJORADO -->
-      <div class="relative card-glass rounded-[2rem] sm:rounded-[2rem] border border-[#6B8E6B]/20 py-8 sm:py-8 md:py-8 px-8 sm:px-8 md:px-8 z-10 max-w-sm sm:max-w-sm md:max-w-sm mx-auto shadow-2xl" id="card-contador">
-        
-        <!-- CONTADOR -->
-        <div class="relative" id="contador-container">
-          
-          <div class="flex items-center justify-center gap-3 sm:gap-3 md:gap-3">
-            
-            <!-- DÍAS -->
-            <div class="flex flex-col items-center grupo-tiempo">
-              <div class="font-charm text-4xl sm:text-4xl md:text-4xl lg:text-4xl font-bold leading-none numero-uniforme" id="dias">00</div>
-              <div class="text-xs sm:text-xs md:text-xs lg:text-xs text-[#6B8E6B] uppercase tracking-widest font-charm mt-2 sm:mt-3 font-semibold">Días</div>
+    <!-- CARD PRINCIPAL CON GLASS EFFECT MEJORADO -->
+    <div
+      class="relative card-glass rounded-[2rem] sm:rounded-[2rem] border border-[#6B8E6B]/20 py-8 sm:py-8 md:py-8 px-8 sm:px-8 md:px-8 z-10 max-w-sm sm:max-w-sm md:max-w-sm mx-auto shadow-2xl"
+      id="card-contador"
+    >
+      <!-- CONTADOR -->
+      <div class="relative" id="contador-container">
+        <div class="flex items-center justify-center gap-3 sm:gap-3 md:gap-3">
+          <!-- DÍAS -->
+          <div class="flex flex-col items-center grupo-tiempo">
+            <div
+              class="font-charm text-4xl sm:text-4xl md:text-4xl lg:text-4xl font-bold leading-none numero-uniforme"
+              id="dias"
+            >
+              00
             </div>
-
-            <!-- SEPARADOR -->
-            <div class="text-3xl sm:text-3xl md:text-3xl text-[#D4AF37]/50 font-thin separador">:</div>
-
-            <!-- HORAS -->
-            <div class="flex flex-col items-center grupo-tiempo">
-              <div class="font-charm text-4xl sm:text-4xl md:text-4xl lg:text-4xl font-bold leading-none numero-uniforme" id="horas">00</div>
-              <div class="text-xs sm:text-xs md:text-xs lg:text-xs text-[#6B8E6B] uppercase tracking-widest font-charm mt-2 sm:mt-3 font-semibold">Horas</div>
-            </div>
-
-            <div class="text-3xl sm:text-3xl md:text-3xl text-[#D4AF37]/50 font-thin separador">:</div>
-
-            <!-- MINUTOS -->
-            <div class="flex flex-col items-center grupo-tiempo">
-              <div class="font-charm text-4xl sm:text-4xl md:text-4xl lg:text-4xl font-bold leading-none numero-uniforme" id="minutos">00</div>
-              <div class="text-xs sm:text-xs md:text-xs lg:text-xs text-[#6B8E6B] uppercase tracking-widest font-charm mt-2 sm:mt-3 font-semibold">Minutos</div>
-            </div>
-
-            <div class="text-3xl sm:text-3xl md:text-3xl text-[#D4AF37]/50 font-thin separador">:</div>
-
-            <!-- SEGUNDOS -->
-            <div class="flex flex-col items-center grupo-tiempo">
-              <div class="font-charm text-4xl sm:text-4xl md:text-4xl lg:text-4xl font-bold leading-none numero-uniforme" id="segundos">00</div>
-              <div class="text-xs sm:text-xs md:text-xs lg:text-xs text-[#6B8E6B] uppercase tracking-widest font-charm mt-2 sm:mt-3 font-semibold">Segundos</div>
-            </div>
-
-          </div>
-
-          <!-- MENSAJE INFERIOR -->
-          <div class="text-center mt-8 sm:mt-10">
-            <div class="inline-flex items-center gap-3 bg-gradient-to-r from-[#6B8E6B]/10 to-[#D4AF37]/10 backdrop-blur-sm rounded-full px-6 py-3 shadow-md">
-              <img src="/imagenes/FloresIndividuales.webp" alt="Flor" class="w-5 h-5 sm:w-6 sm:h-6 object-contain animate-pulse" />
-              <p class="font-charm text-sm sm:text-sm md:text-sm text-[#6B8E6B] font-medium">
-                Donde los sueños se vuelven realidad
-              </p>
-              <img src="/imagenes/FloresIndividuales.webp" alt="Flor" class="w-5 h-5 sm:w-6 sm:h-6 object-contain animate-pulse" style="animation-delay: 0.5s;" />
+            <div
+              class="text-xs sm:text-xs md:text-xs lg:text-xs text-[#6B8E6B] uppercase tracking-widest font-charm mt-2 sm:mt-3 font-semibold"
+            >
+              Días
             </div>
           </div>
 
+          <!-- SEPARADOR -->
+          <div
+            class="text-3xl sm:text-3xl md:text-3xl text-[#D4AF37]/50 font-thin separador"
+          >
+            :
+          </div>
+
+          <!-- HORAS -->
+          <div class="flex flex-col items-center grupo-tiempo">
+            <div
+              class="font-charm text-4xl sm:text-4xl md:text-4xl lg:text-4xl font-bold leading-none numero-uniforme"
+              id="horas"
+            >
+              00
+            </div>
+            <div
+              class="text-xs sm:text-xs md:text-xs lg:text-xs text-[#6B8E6B] uppercase tracking-widest font-charm mt-2 sm:mt-3 font-semibold"
+            >
+              Horas
+            </div>
+          </div>
+
+          <div
+            class="text-3xl sm:text-3xl md:text-3xl text-[#D4AF37]/50 font-thin separador"
+          >
+            :
+          </div>
+
+          <!-- MINUTOS -->
+          <div class="flex flex-col items-center grupo-tiempo">
+            <div
+              class="font-charm text-4xl sm:text-4xl md:text-4xl lg:text-4xl font-bold leading-none numero-uniforme"
+              id="minutos"
+            >
+              00
+            </div>
+            <div
+              class="text-xs sm:text-xs md:text-xs lg:text-xs text-[#6B8E6B] uppercase tracking-widest font-charm mt-2 sm:mt-3 font-semibold"
+            >
+              Minutos
+            </div>
+          </div>
+
+          <div
+            class="text-3xl sm:text-3xl md:text-3xl text-[#D4AF37]/50 font-thin separador"
+          >
+            :
+          </div>
+
+          <!-- SEGUNDOS -->
+          <div class="flex flex-col items-center grupo-tiempo">
+            <div
+              class="font-charm text-4xl sm:text-4xl md:text-4xl lg:text-4xl font-bold leading-none numero-uniforme"
+              id="segundos"
+            >
+              00
+            </div>
+            <div
+              class="text-xs sm:text-xs md:text-xs lg:text-xs text-[#6B8E6B] uppercase tracking-widest font-charm mt-2 sm:mt-3 font-semibold"
+            >
+              Segundos
+            </div>
+          </div>
         </div>
 
+        <!-- MENSAJE INFERIOR -->
+        <div class="text-center mt-8 sm:mt-10">
+          <div
+            class="inline-flex items-center gap-3 bg-gradient-to-r from-[#6B8E6B]/10 to-[#D4AF37]/10 backdrop-blur-sm rounded-full px-6 py-3 shadow-md"
+          >
+            <img
+              src="/imagenes/FloresIndividuales.webp"
+              alt="Flor"
+              class="w-5 h-5 sm:w-6 sm:h-6 object-contain animate-pulse"
+            />
+            <p
+              class="font-charm text-sm sm:text-sm md:text-sm text-[#6B8E6B] font-medium"
+            >
+              Donde los sueños se vuelven realidad
+            </p>
+            <img
+              src="/imagenes/FloresIndividuales.webp"
+              alt="Flor"
+              class="w-5 h-5 sm:w-6 sm:h-6 object-contain animate-pulse"
+              style="animation-delay: 0.5s;"
+            />
+          </div>
+        </div>
       </div>
-
     </div>
-    
   </div>
-</section>
+</div>
 
 <script>
   import { gsap } from "gsap";
@@ -103,9 +179,9 @@
 
   gsap.registerPlugin(ScrollTrigger);
 
-  if (typeof window !== 'undefined') {
+  if (typeof window !== "undefined") {
     document.addEventListener("DOMContentLoaded", () => {
-      const fechaEvento = new Date("2026-04-25T00:00:00").getTime();
+      const fechaEvento = new Date("2026-01-31T00:00:00").getTime();
 
       function actualizarContador() {
         const ahora = new Date().getTime();
@@ -113,8 +189,12 @@
 
         if (diferencia > 0) {
           const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
-          const horas = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-          const minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
+          const horas = Math.floor(
+            (diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
+          );
+          const minutos = Math.floor(
+            (diferencia % (1000 * 60 * 60)) / (1000 * 60),
+          );
           const segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
 
           const diasEl = document.getElementById("dias");
@@ -124,8 +204,10 @@
 
           if (diasEl) diasEl.textContent = String(dias).padStart(2, "0");
           if (horasEl) horasEl.textContent = String(horas).padStart(2, "0");
-          if (minutosEl) minutosEl.textContent = String(minutos).padStart(2, "0");
-          if (segundosEl) segundosEl.textContent = String(segundos).padStart(2, "0");
+          if (minutosEl)
+            minutosEl.textContent = String(minutos).padStart(2, "0");
+          if (segundosEl)
+            segundosEl.textContent = String(segundos).padStart(2, "0");
         }
       }
 
@@ -144,9 +226,22 @@
         start: "top 85%",
         onEnter: () => {
           const tl = gsap.timeline();
-          tl.to("#texto-superior", { opacity: 1, y: 0, duration: 0.8, ease: "power2.out" })
-            .to("#card-contador", { opacity: 1, scale: 1, duration: 1, ease: "back.out(1.2)" }, "-=0.4")
-            .to("#deco-izq, #deco-der", { opacity: 1, x: 0, scale: 1, duration: 1, ease: "power2.out" }, "-=0.6");
+          tl.to("#texto-superior", {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            ease: "power2.out",
+          })
+            .to(
+              "#card-contador",
+              { opacity: 1, scale: 1, duration: 1, ease: "back.out(1.2)" },
+              "-=0.4",
+            )
+            .to(
+              "#deco-izq, #deco-der",
+              { opacity: 1, x: 0, scale: 1, duration: 1, ease: "power2.out" },
+              "-=0.6",
+            );
         },
         onLeaveBack: () => {
           gsap.set("#texto-superior", { opacity: 0, y: -30 });
@@ -157,28 +252,43 @@
       });
 
       // Animaciones continuas
-      gsap.to("#deco-izq", { y: -8, rotation: -3, duration: 4, ease: "sine.inOut", yoyo: true, repeat: -1 });
-      gsap.to("#deco-der", { y: -8, rotation: 3, duration: 4, ease: "sine.inOut", yoyo: true, repeat: -1 });
-      
-      // Animación de separadores más sutil
-      gsap.to(".separador", { 
-        opacity: 0.3, 
-        scale: 0.95, 
-        duration: 1.5, 
-        ease: "sine.inOut", 
-        yoyo: true, 
-        repeat: -1, 
-        stagger: 0.2 
+      gsap.to("#deco-izq", {
+        y: -8,
+        rotation: -3,
+        duration: 4,
+        ease: "sine.inOut",
+        yoyo: true,
+        repeat: -1,
       });
-      
+      gsap.to("#deco-der", {
+        y: -8,
+        rotation: 3,
+        duration: 4,
+        ease: "sine.inOut",
+        yoyo: true,
+        repeat: -1,
+      });
+
+      // Animación de separadores más sutil
+      gsap.to(".separador", {
+        opacity: 0.3,
+        scale: 0.95,
+        duration: 1.5,
+        ease: "sine.inOut",
+        yoyo: true,
+        repeat: -1,
+        stagger: 0.2,
+      });
+
       // Animación de brillo en números mejorada
       gsap.to(".numero-uniforme", {
-        textShadow: "0 0 20px rgba(107, 142, 107, 0.5), 0 0 30px rgba(107, 142, 107, 0.3)",
+        textShadow:
+          "0 0 20px rgba(107, 142, 107, 0.5), 0 0 30px rgba(107, 142, 107, 0.3)",
         duration: 2.5,
         ease: "sine.inOut",
         yoyo: true,
         repeat: -1,
-        stagger: 0.3
+        stagger: 0.3,
       });
     });
   }
@@ -187,14 +297,15 @@
 <style>
   /* EFECTO GLASS MEJORADO */
   .card-glass {
-    background: linear-gradient(135deg, 
+    background: linear-gradient(
+      135deg,
       rgba(255, 255, 255, 0.95) 0%,
       rgba(255, 255, 255, 0.85) 50%,
       rgba(255, 255, 255, 0.95) 100%
     );
     backdrop-filter: blur(25px) saturate(180%);
     -webkit-backdrop-filter: blur(25px) saturate(180%);
-    box-shadow: 
+    box-shadow:
       0 8px 32px rgba(107, 142, 107, 0.15),
       0 0 0 1px rgba(107, 142, 107, 0.1),
       inset 0 1px 0 rgba(255, 255, 255, 0.9);
@@ -204,7 +315,7 @@
   .card-glass:hover {
     backdrop-filter: blur(30px) saturate(200%);
     -webkit-backdrop-filter: blur(30px) saturate(200%);
-    box-shadow: 
+    box-shadow:
       0 15px 50px rgba(107, 142, 107, 0.2),
       0 0 0 1px rgba(107, 142, 107, 0.15),
       inset 0 1px 0 rgba(255, 255, 255, 1);
@@ -213,7 +324,7 @@
 
   /* NÚMEROS CON COLOR UNIFORME */
   .numero-uniforme {
-    color: #6B8E6B;
+    color: #6b8e6b;
     filter: drop-shadow(0 2px 8px rgba(107, 142, 107, 0.3));
     transition: all 0.3s ease;
   }

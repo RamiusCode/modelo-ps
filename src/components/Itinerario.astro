@@ -1,26 +1,27 @@
 ---
-// Itinerario.astro
+// Itinerario.astro - Versión compacta con imágenes doradas
 ---
 
-<section class="py-4 lg:py-20 px-4 relative overflow-hidden">
-  <!-- Fondo sutil con textura -->
-  <!-- <div class="absolute inset-0 bg-gradient-to-b from-[#fffaf5]/40 via-[#fff9f0]/20 to-[#fffaf5]/40 z-0"></div> -->
-<div class="absolute inset-0 bg-transparent z-0"></div>
-  <div class="max-w-5xl sm:max-w-xl lg:max-w-2xl mx-auto relative z-10">
-
+<section class="px-4 relative overflow-hidden py-6">
+  <div class="max-w-5xl mx-auto relative z-10">
     <div class="max-w-3xl mx-auto relative">
-
-      <!-- 🍃 HOJA IZQUIERDA - PEGADA AL BORDE Y CENTRADA VERTICALMENTE -->
-      <div class="absolute left-0 top-1/2 -translate-y-1/2 w-12 pointer-events-none -ml-6 sm:-ml-6 md:-ml-6 z-20" id="hoja-itinerario-izq">
+      <!-- 🍃 HOJA IZQUIERDA -->
+      <div
+        class="absolute left-0 top-1/2 -translate-y-1/2 w-12 pointer-events-none -ml-6 sm:-ml-6 md:-ml-6 z-20 hoja-izq"
+        id="hoja-itinerario-izq"
+      >
         <img
           src="/imagenes/FloresLaterales.webp"
           alt="Hoja izquierda"
-          class="w-full h-auto object-contain "
+          class="w-full h-auto object-contain"
         />
       </div>
 
-      <!-- 🍃 HOJA DERECHA - PEGADA AL BORDE Y CENTRADA VERTICALMENTE -->
-      <div class="absolute right-0 top-1/2 -translate-y-1/2 w-12 pointer-events-none -mr-6 sm:-mr-6 md:-mr-6 z-20" id="hoja-itinerario-der">
+      <!-- 🍃 HOJA DERECHA -->
+      <div
+        class="absolute right-0 top-1/2 -translate-y-1/2 w-12 pointer-events-none -mr-6 sm:-mr-6 md:-mr-6 z-20 hoja-der"
+        id="hoja-itinerario-der"
+      >
         <img
           src="/imagenes/FloresLaterales.webp"
           alt="Hoja derecha"
@@ -28,7 +29,7 @@
         />
       </div>
 
-      <!-- 🌸 FLORES DECORATIVAS ARRIBA -->
+      <!-- 🌸 FLORES DECORATIVAS -->
       <div class="flex justify-center mb-4" id="flores-itinerario">
         <img
           src="/imagenes/SeparadorDos.webp"
@@ -38,216 +39,376 @@
       </div>
 
       <!-- TÍTULO -->
-      <div class="text-center mb-8" id="titulo-itinerario">
-        <h2 class="font-serif text-2xl md:text-2xl lg:text-2xl text-[#D4AF37] font-bold mb-4 italic">
+      <div class="text-center mb-6 titulo-itinerario">
+        <h2
+          class="font-serif text-2xl md:text-2xl lg:text-2xl text-[#D4AF37] font-bold mb-4 italic"
+        >
           ITINERARIO
         </h2>
-        <!-- Línea decorativa -->
         <div class="flex items-center justify-center gap-3">
-          <div class="w-16 h-[2px] bg-gradient-to-r from-transparent to-[#D4AF37]"></div>
+          <div
+            class="w-16 h-[2px] bg-gradient-to-r from-transparent to-[#D4AF37]"
+          >
+          </div>
           <div class="w-2 h-2 rounded-full bg-[#D4AF37]"></div>
-          <div class="w-16 h-[2px] bg-gradient-to-l from-transparent to-[#D4AF37]"></div>
+          <div
+            class="w-16 h-[2px] bg-gradient-to-l from-transparent to-[#D4AF37]"
+          >
+          </div>
         </div>
       </div>
 
       <!-- TIMELINE CONTAINER -->
       <div class="relative px-4 md:px-8">
-        
-        <!-- Línea vertical CENTRAL con degradado mejorado -->
-        <div class="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-[3px] bg-gradient-to-b from-[#D4AF37] via-[#dab961] to-[#D4AF37] rounded-full shadow-sm" id="linea-central"></div>
-
-        <!-- EVENTOS DEL ITINERARIO -->
-        <div class="space-y-1" id="eventos-container">
-
-          <!-- ❤️ CORAZÓN 1 -->
-          <div class="flex justify-center py-2">
-            <div class="w-8 h-8 rounded-full bg-gradient-to-br from-[#D4AF37] to-[#b8942d] flex items-center justify-center relative z-10 corazon-item shadow-md">
-              <svg class="w-4 h-4 text-white" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-              </svg>
-            </div>
-          </div>
-
-          <!-- EVENTO 1: Ingreso de Invitados (IMAGEN IZQ - TEXTO DER) -->
-          <div class="evento-item grid grid-cols-2 gap-6 md:gap-6 py-2">
-            <div class="flex flex-col items-center justify-center px-3 md:px-3 imagen-izq">
-              <div class="w-16 h-16 md:w-20 md:h-20 lg:w-20 lg:h-20 transform transition-transform duration-300 hover:scale-110">
-                <img src="/iconos/IconoDireccion.webp" alt="Ingreso" class="w-full h-full object-contain drop-shadow-md" />
-              </div>
-            </div>
-            <div class="flex flex-col items-center justify-center px-3 md:px-3 text-center texto-der">
-              <p class="font-charm text-xl md:text-xl lg:text-xl text-[#D4AF37] font-bold leading-tight">Ingreso de Invitados</p>
-              <p class="font-charm text-xl md:text-xl text-[#6B8E6B] mt-1">16:00 Hrs</p>
-            </div>
-          </div>
-
-          <!-- ❤️ CORAZÓN 2 -->
-          <div class="flex justify-center py-2">
-            <div class="w-8 h-8 rounded-full bg-gradient-to-br from-[#D4AF37] to-[#b8942d] flex items-center justify-center relative z-10 corazon-item shadow-md">
-              <svg class="w-4 h-4 text-white" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-              </svg>
-            </div>
-          </div>
-
-          <!-- EVENTO 2: Entrada de la Quinceañera (TEXTO IZQ - IMAGEN DER) -->
-          <div class="evento-item grid grid-cols-2 gap-6 md:gap-6 py-2">
-            <div class="flex flex-col items-center justify-center px-3 md:px-3 text-center texto-izq">
-              <p class="font-charm text-xl md:text-xl lg:text-xl text-[#D4AF37] font-bold leading-tight">Entrada de la Quinceañera</p>
-              <p class="font-charm text-xl md:text-xl text-[#6B8E6B] mt-1">17:00 Hrs</p>
-            </div>
-            <div class="flex flex-col items-center justify-center px-3 md:px-6 imagen-der">
-              <div class="w-16 h-16 md:w-16 md:h-16 lg:w-16 lg:h-16 transform transition-transform duration-300 hover:scale-110">
-                <img src="/iconos/Vestido.webp" alt="Quinceañera" class="w-full h-full object-contain drop-shadow-md" />
-              </div>
-            </div>
-          </div>
-
-          <!-- ❤️ CORAZÓN 3 -->
-          <div class="flex justify-center py-2">
-            <div class="w-8 h-8 rounded-full bg-gradient-to-br from-[#D4AF37] to-[#b8942d] flex items-center justify-center relative z-10 corazon-item shadow-md">
-              <svg class="w-4 h-4 text-white" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-              </svg>
-            </div>
-          </div>
-
-          <!-- EVENTO 3: Vals Tradicional (IMAGEN IZQ - TEXTO DER) -->
-          <div class="evento-item grid grid-cols-2 gap-6 md:gap-6 py-2">
-            <div class="flex flex-col items-center justify-center px-3 md:px-3 imagen-izq">
-              <div class="w-16 h-16 md:w-16 md:h-16 lg:w-16 lg:h-16 transform transition-transform duration-300 hover:scale-110">
-                <img src="/iconos/Vals.webp" alt="Vals" class="w-full h-full object-contain drop-shadow-md" />
-              </div>
-            </div>
-            <div class="flex flex-col items-center justify-center px-3 md:px-3 text-center texto-der">
-              <p class="font-charm text-xl md:text-xl lg:text-xl text-[#D4AF37] font-bold leading-tight">Vals Tradicional</p>
-              <p class="font-charm text-xl md:text-xl text-[#6B8E6B] mt-1">17:30 Hrs</p>
-            </div>
-          </div>
-
-          <!-- ❤️ CORAZÓN 4 -->
-          <div class="flex justify-center py-2">
-            <div class="w-8 h-8 rounded-full bg-gradient-to-br from-[#D4AF37] to-[#b8942d] flex items-center justify-center relative z-10 corazon-item shadow-md">
-              <svg class="w-4 h-4 text-white" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-              </svg>
-            </div>
-          </div>
-
-          <!-- EVENTO 4: Cambio de Zapatillas (TEXTO IZQ - IMAGEN DER) -->
-          <div class="evento-item grid grid-cols-2 gap-6 md:gap-6 py-2">
-            <div class="flex flex-col items-center justify-center px-3 md:px-3 text-center texto-izq">
-              <p class="font-charm text-xl md:text-xl lg:text-xl text-[#D4AF37] font-bold leading-tight">Ceremonia del Cambio de Zapatillas</p>
-              <p class="font-charm text-xl md:text-xl text-[#6B8E6B] mt-1">18:00 Hrs</p>
-            </div>
-            <div class="flex flex-col items-center justify-center px-3 md:px-3 imagen-der">
-              <div class="w-16 h-16 md:w-16 md:h-16 lg:w-16 lg:h-16 transform transition-transform duration-300 hover:scale-110">
-                <img src="/iconos/Zapatos.webp" alt="Cambio de Zapatillas" class="w-full h-full object-contain drop-shadow-md" />
-              </div>
-            </div>
-          </div>
-
-          <!-- ❤️ CORAZÓN 5 -->
-          <div class="flex justify-center py-2">
-            <div class="w-8 h-8 rounded-full bg-gradient-to-br from-[#D4AF37] to-[#b8942d] flex items-center justify-center relative z-10 corazon-item shadow-md">
-              <svg class="w-4 h-4 text-white" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-              </svg>
-            </div>
-          </div>
-
-          <!-- EVENTO 5: Brindis y Palabras (IMAGEN IZQ - TEXTO DER) -->
-          <div class="evento-item grid grid-cols-2 gap-6 md:gap-6 py-2">
-            <div class="flex flex-col items-center justify-center px-3 md:px-3 imagen-izq">
-              <div class="w-16 h-16 md:w-16 md:h-16 lg:w-16 lg:h-16 transform transition-transform duration-300 hover:scale-110">
-                <img src="/iconos/Brindis.webp" alt="Brindis y Palabras" class="w-full h-full object-contain drop-shadow-md" />
-              </div>
-            </div>
-            <div class="flex flex-col items-center justify-center px-3 md:px-3 text-center texto-der">
-              <p class="font-charm text-xl md:text-xl lg:text-xl text-[#D4AF37] font-bold leading-tight">Brindis y Palabras</p>
-              <p class="font-charm text-xl md:text-xl text-[#6B8E6B] mt-1">18:30 Hrs</p>
-            </div>
-          </div>
-
-          <!-- ❤️ CORAZÓN 6 -->
-          <div class="flex justify-center py-2">
-            <div class="w-8 h-8 rounded-full bg-gradient-to-br from-[#D4AF37] to-[#b8942d] flex items-center justify-center relative z-10 corazon-item shadow-md">
-              <svg class="w-4 h-4 text-white" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-              </svg>
-            </div>
-          </div>
-
-          <!-- EVENTO 6: Cena (TEXTO IZQ - IMAGEN DER) ⭐ NUEVO -->
-          <div class="evento-item grid grid-cols-2 gap-6 md:gap-6 py-2">
-            <div class="flex flex-col items-center justify-center px-3 md:px-3 text-center texto-izq">
-              <p class="font-charm text-xl md:text-xl lg:text-xl text-[#D4AF37] font-bold leading-tight">Cena</p>
-              <p class="font-charm text-xl md:text-xl text-[#6B8E6B] mt-1">19:00 Hrs</p>
-            </div>
-            <div class="flex flex-col items-center justify-center px-3 md:px-3 imagen-der">
-              <div class="w-16 h-16 md:w-16 md:h-16 lg:w-16 lg:h-16 transform transition-transform duration-300 hover:scale-110">
-                <img src="/iconos/Cena.webp" alt="Cena" class="w-full h-full object-contain drop-shadow-md" />
-              </div>
-            </div>
-          </div>
-
-          <!-- ❤️ CORAZÓN 7 -->
-          <div class="flex justify-center py-2">
-            <div class="w-8 h-8 rounded-full bg-gradient-to-br from-[#D4AF37] to-[#b8942d] flex items-center justify-center relative z-10 corazon-item shadow-md">
-              <svg class="w-4 h-4 text-white" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-              </svg>
-            </div>
-          </div>
-
-          <!-- EVENTO 7: Corte de Pastel (IMAGEN IZQ - TEXTO DER) ⭐ NUEVO -->
-          <div class="evento-item grid grid-cols-2 gap-6 md:gap-6 py-2">
-            <div class="flex flex-col items-center justify-center px-3 md:px-3 imagen-izq">
-              <div class="w-16 h-16 md:w-16 md:h-16 lg:w-16 lg:h-16 transform transition-transform duration-300 hover:scale-110">
-                <img src="/iconos/Torta.webp" alt="Torta" class="w-full h-full object-contain drop-shadow-md" />
-              </div>
-            </div>
-            <div class="flex flex-col items-center justify-center px-3 md:px-3 text-center texto-der">
-              <p class="font-charm text-xl md:text-xl lg:text-xl text-[#D4AF37] font-bold leading-tight">Corte de Pastel</p>
-              <p class="font-charm text-xl md:text-sm text-[#6B8E6B] mt-1">20:00 Hrs</p>
-            </div>
-          </div>
-
-          <!-- ❤️ CORAZÓN 8 -->
-          <div class="flex justify-center py-2">
-            <div class="w-8 h-8 rounded-full bg-gradient-to-br from-[#D4AF37] to-[#b8942d] flex items-center justify-center relative z-10 corazon-item shadow-md">
-              <svg class="w-4 h-4 text-white" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-              </svg>
-            </div>
-          </div>
-
-          <!-- EVENTO 8: Hora Loca (TEXTO IZQ - IMAGEN DER) ⭐ NUEVO -->
-          <div class="evento-item grid grid-cols-2 gap-6 md:gap-6 py-2">
-            <div class="flex flex-col items-center justify-center px-3 md:px-3 text-center texto-izq">
-              <p class="font-charm text-xl md:text-xl lg:text-xl text-[#D4AF37] font-bold leading-tight">Hora Loca</p>
-              <p class="font-charm text-xl md:text-xl text-[#6B8E6B] mt-1">21:00 Hrs</p>
-            </div>
-            <div class="flex flex-col items-center justify-center px-3 md:px-3 imagen-der">
-              <div class="w-16 h-16 md:w-16 md:h-16 lg:w-16 lg:h-16 transform transition-transform duration-300 hover:scale-110">
-                <img src="/iconos/HoraLoca.webp" alt="Hora Loca" class="w-full h-full object-contain drop-shadow-md" />
-              </div>
-            </div>
-          </div>
-
-          <!-- ❤️ CORAZÓN FINAL -->
-          <div class="flex justify-center py-2">
-            <div class="w-8 h-8 rounded-full bg-gradient-to-br from-[#D4AF37] to-[#b8942d] flex items-center justify-center relative z-10 corazon-item shadow-md">
-              <svg class="w-4 h-4 text-white" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-              </svg>
-            </div>
-          </div>
-
+        <!-- Línea vertical CENTRAL -->
+        <div
+          class="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-[3px] bg-gradient-to-b from-[#D4AF37] via-[#dab961] to-[#D4AF37] rounded-full shadow-sm linea-central"
+          id="linea-central"
+        >
         </div>
 
-      </div>
+        <!-- EVENTOS DEL ITINERARIO -->
+        <div class="space-y-0" id="eventos-container">
+          <!-- CORAZÓN 0 -->
+          <div class="flex justify-center py-1">
+            <div
+              class="w-8 h-8 rounded-full bg-gradient-to-br from-[#D4AF37] to-[#b8942d] flex items-center justify-center relative z-10 corazon-item shadow-md"
+            >
+              <svg
+                class="w-4 h-4 text-white"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+                ></path>
+              </svg>
+            </div>
+          </div>
 
+          <!-- EVENTO 0: Ceremonia Religiosa -->
+          <div class="evento-item grid grid-cols-2 gap-4 md:gap-8 py-1">
+            <div
+              class="flex flex-col items-center justify-center px-2 md:px-4 text-center texto-izq"
+            >
+              <p
+                class="font-charm text-lg md:text-xl lg:text-xl text-[#D4AF37] font-bold leading-tight"
+              >
+                Ceremonia Religiosa
+              </p>
+              <p class="font-charm text-base md:text-xl text-[#6B8E6B] mt-0.5">
+                17:00 p.m.
+              </p>
+            </div>
+            <div
+              class="flex flex-col items-center justify-center px-2 md:px-4 imagen-der"
+            >
+              <div
+                class="w-14 h-14 md:w-16 md:h-16 transform transition-transform duration-300 hover:scale-110"
+              >
+                <img
+                  src="/iconos/iglesia.png"
+                  alt="Ceremonia Religiosa"
+                  class="w-full h-full object-contain dorado-filter"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- CORAZÓN 1 -->
+          <div class="flex justify-center py-1">
+            <div
+              class="w-8 h-8 rounded-full bg-gradient-to-br from-[#D4AF37] to-[#b8942d] flex items-center justify-center relative z-10 corazon-item shadow-md"
+            >
+              <svg
+                class="w-4 h-4 text-white"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+                ></path>
+              </svg>
+            </div>
+          </div>
+
+          <!-- EVENTO 1: Recepción -->
+          <div class="evento-item grid grid-cols-2 gap-4 md:gap-8 py-1">
+            <div
+              class="flex flex-col items-center justify-center px-2 md:px-4 imagen-izq"
+            >
+              <div
+                class="w-14 h-14 md:w-16 md:h-16 transform transition-transform duration-300 hover:scale-110"
+              >
+                <img
+                  src="/iconos/IconoDireccion.webp"
+                  alt="Recepción"
+                  class="w-full h-full object-contain dorado-filter"
+                />
+              </div>
+            </div>
+            <div
+              class="flex flex-col items-center justify-center px-2 md:px-4 text-center texto-der"
+            >
+              <p
+                class="font-charm text-lg md:text-xl lg:text-xl text-[#D4AF37] font-bold leading-tight"
+              >
+                Recepción
+              </p>
+              <p class="font-charm text-base md:text-xl text-[#6B8E6B] mt-0.5">
+                19:00 p.m.
+              </p>
+            </div>
+          </div>
+
+          <!-- CORAZÓN 2 -->
+          <div class="flex justify-center py-1">
+            <div
+              class="w-8 h-8 rounded-full bg-gradient-to-br from-[#D4AF37] to-[#b8942d] flex items-center justify-center relative z-10 corazon-item shadow-md"
+            >
+              <svg
+                class="w-4 h-4 text-white"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+                ></path>
+              </svg>
+            </div>
+          </div>
+
+          <!-- EVENTO 2: Acto central -->
+          <div class="evento-item grid grid-cols-2 gap-4 md:gap-8 py-1">
+            <div
+              class="flex flex-col items-center justify-center px-2 md:px-4 text-center texto-izq"
+            >
+              <p
+                class="font-charm text-lg md:text-xl lg:text-xl text-[#D4AF37] font-bold leading-tight"
+              >
+                Acto central
+              </p>
+              <p class="font-charm text-base md:text-xl text-[#6B8E6B] mt-0.5">
+                21:00 p.m.
+              </p>
+            </div>
+            <div
+              class="flex flex-col items-center justify-center px-2 md:px-4 imagen-der"
+            >
+              <div
+                class="w-14 h-14 md:w-16 md:h-16 transform transition-transform duration-300 hover:scale-110"
+              >
+                <img
+                  src="/iconos/acto.png"
+                  alt="Acto central"
+                  class="w-full h-full object-contain dorado-filter"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- CORAZÓN 3 -->
+          <div class="flex justify-center py-1">
+            <div
+              class="w-8 h-8 rounded-full bg-gradient-to-br from-[#D4AF37] to-[#b8942d] flex items-center justify-center relative z-10 corazon-item shadow-md"
+            >
+              <svg
+                class="w-4 h-4 text-white"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+                ></path>
+              </svg>
+            </div>
+          </div>
+
+          <!-- EVENTO 3: Baile sorpresa -->
+          <div class="evento-item grid grid-cols-2 gap-4 md:gap-8 py-1">
+            <div
+              class="flex flex-col items-center justify-center px-2 md:px-4 imagen-izq"
+            >
+              <div
+                class="w-14 h-14 md:w-16 md:h-16 transform transition-transform duration-300 hover:scale-110"
+              >
+                <img
+                  src="/iconos/Vals.webp"
+                  alt="Baile sorpresa"
+                  class="w-full h-full object-contain dorado-filter"
+                />
+              </div>
+            </div>
+            <div
+              class="flex flex-col items-center justify-center px-2 md:px-4 text-center texto-der"
+            >
+              <p
+                class="font-charm text-lg md:text-xl lg:text-xl text-[#D4AF37] font-bold leading-tight"
+              >
+                Baile sorpresa
+              </p>
+              <p class="font-charm text-base md:text-xl text-[#6B8E6B] mt-0.5">
+                22:00 p.m.
+              </p>
+            </div>
+          </div>
+
+          <!-- CORAZÓN 4 -->
+          <div class="flex justify-center py-1">
+            <div
+              class="w-8 h-8 rounded-full bg-gradient-to-br from-[#D4AF37] to-[#b8942d] flex items-center justify-center relative z-10 corazon-item shadow-md"
+            >
+              <svg
+                class="w-4 h-4 text-white"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+                ></path>
+              </svg>
+            </div>
+          </div>
+
+          <!-- EVENTO 4: Cena y torta -->
+          <div class="evento-item grid grid-cols-2 gap-4 md:gap-8 py-1">
+            <div
+              class="flex flex-col items-center justify-center px-2 md:px-4 text-center texto-izq"
+            >
+              <p
+                class="font-charm text-lg md:text-xl lg:text-xl text-[#D4AF37] font-bold leading-tight"
+              >
+                Cena y torta
+              </p>
+              <p class="font-charm text-base md:text-xl text-[#6B8E6B] mt-0.5">
+                22:30 p.m.
+              </p>
+            </div>
+            <div
+              class="flex flex-col items-center justify-center px-2 md:px-4 imagen-der"
+            >
+              <div
+                class="w-14 h-14 md:w-16 md:h-16 transform transition-transform duration-300 hover:scale-110"
+              >
+                <img
+                  src="/iconos/Cena.webp"
+                  alt="Cena y torta"
+                  class="w-full h-full object-contain dorado-filter"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- CORAZÓN 5 -->
+          <div class="flex justify-center py-1">
+            <div
+              class="w-8 h-8 rounded-full bg-gradient-to-br from-[#D4AF37] to-[#b8942d] flex items-center justify-center relative z-10 corazon-item shadow-md"
+            >
+              <svg
+                class="w-4 h-4 text-white"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+                ></path>
+              </svg>
+            </div>
+          </div>
+
+          <!-- EVENTO 5: Hora loca -->
+          <div class="evento-item grid grid-cols-2 gap-4 md:gap-8 py-1">
+            <div
+              class="flex flex-col items-center justify-center px-2 md:px-4 imagen-izq"
+            >
+              <div
+                class="w-14 h-14 md:w-16 md:h-16 transform transition-transform duration-300 hover:scale-110"
+              >
+                <img
+                  src="/iconos/HoraLoca.webp"
+                  alt="Hora loca"
+                  class="w-full h-full object-contain dorado-filter"
+                />
+              </div>
+            </div>
+            <div
+              class="flex flex-col items-center justify-center px-2 md:px-4 text-center texto-der"
+            >
+              <p
+                class="font-charm text-lg md:text-xl lg:text-xl text-[#D4AF37] font-bold leading-tight"
+              >
+                Hora loca
+              </p>
+              <p class="font-charm text-base md:text-xl text-[#6B8E6B] mt-0.5">
+                00:30 a.m.
+              </p>
+            </div>
+          </div>
+
+          <!-- CORAZÓN 6 -->
+          <div class="flex justify-center py-1">
+            <div
+              class="w-8 h-8 rounded-full bg-gradient-to-br from-[#D4AF37] to-[#b8942d] flex items-center justify-center relative z-10 corazon-item shadow-md"
+            >
+              <svg
+                class="w-4 h-4 text-white"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+                ></path>
+              </svg>
+            </div>
+          </div>
+
+          <!-- EVENTO 6: Despedida -->
+          <div class="evento-item grid grid-cols-2 gap-4 md:gap-8 py-1">
+            <div
+              class="flex flex-col items-center justify-center px-2 md:px-4 text-center texto-izq"
+            >
+              <p
+                class="font-charm text-lg md:text-xl lg:text-xl text-[#D4AF37] font-bold leading-tight"
+              >
+                Despedida
+              </p>
+              <p class="font-charm text-base md:text-xl text-[#6B8E6B] mt-0.5">
+                03:00 a.m.
+              </p>
+            </div>
+            <div
+              class="flex flex-col items-center justify-center px-2 md:px-4 imagen-der"
+            >
+              <div
+                class="w-14 h-14 md:w-16 md:h-16 transform transition-transform duration-300 hover:scale-110"
+              >
+                <img
+                  src="/iconos/despedida.png"
+                  alt="Despedida"
+                  class="w-full h-full object-contain dorado-filter"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- CORAZÓN FINAL -->
+          <div class="flex justify-center py-1">
+            <div
+              class="w-8 h-8 rounded-full bg-gradient-to-br from-[#D4AF37] to-[#b8942d] flex items-center justify-center relative z-10 corazon-item shadow-md"
+            >
+              <svg
+                class="w-4 h-4 text-white"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+                ></path>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -258,198 +419,229 @@
 
   gsap.registerPlugin(ScrollTrigger);
 
-  if (typeof window !== 'undefined') {
-    document.addEventListener("DOMContentLoaded", () => {
-      console.log("📅 Iniciando itinerario con animación simultánea perfecta...");
+  const initItinerario = () => {
+    // 🎯 ESTADO INICIAL
+    gsap.set("#flores-itinerario", { opacity: 0, y: -30, scale: 0.8 });
+    gsap.set(".titulo-itinerario", { opacity: 0, y: -30 });
+    gsap.set(".linea-central", { opacity: 0, scaleY: 0 });
+    gsap.set(".corazon-item", { opacity: 0, scale: 0 });
+    gsap.set(".evento-item", { opacity: 0 });
+    gsap.set("#hoja-itinerario-izq", { opacity: 0, x: -30 });
+    gsap.set("#hoja-itinerario-der", { opacity: 0, x: 30 });
+    gsap.set(".imagen-izq", { x: -60 });
+    gsap.set(".texto-izq", { x: -60 });
+    gsap.set(".imagen-der", { x: 60 });
+    gsap.set(".texto-der", { x: 60 });
 
-      // 🎯 ESTADO INICIAL
-      gsap.set("#flores-itinerario", { opacity: 0, y: -30, scale: 0.8 });
-      gsap.set("#titulo-itinerario", { opacity: 0, y: -20 });
-      gsap.set("#linea-central", { opacity: 0, scaleY: 0, transformOrigin: "top" });
-      gsap.set(".corazon-item", { opacity: 0, scale: 0 });
-      
-      // Hojas en los bordes
-      gsap.set("#hoja-itinerario-izq", { opacity: 0, x: -30 });
-      gsap.set("#hoja-itinerario-der", { opacity: 0, x: 30 });
-      
-      // Imágenes desde su lado
-      gsap.set(".imagen-izq", { opacity: 0, x: -150, scale: 0.7 });
-      gsap.set(".imagen-der", { opacity: 0, x: 150, scale: 0.7 });
-      
-      // Textos con deslizamiento elegante
-      gsap.set(".texto-izq", { opacity: 0, x: -100 });
-      gsap.set(".texto-der", { opacity: 0, x: 100 });
+    // ✨ ANIMACIÓN DE FLORES Y TÍTULO
+    ScrollTrigger.create({
+      trigger: "#flores-itinerario",
+      start: "top 85%",
+      once: true,
+      onEnter: () => {
+        gsap.to("#flores-itinerario", {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          duration: 1.2,
+          ease: "back.out(1.5)",
+        });
+        gsap.to(".titulo-itinerario", {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          ease: "power2.out",
+          delay: 0.2,
+        });
+      },
+    });
 
-      // ✨ ANIMACIÓN COMPLETAMENTE SIMULTÁNEA
-      ScrollTrigger.create({
-        trigger: "#flores-itinerario",
-        start: "top 85%",
-        end: "top 20%",
-        onEnter: () => {
-          const tl = gsap.timeline();
+    // ✨ ANIMACIÓN DEL ITINERARIO
+    ScrollTrigger.create({
+      trigger: "#eventos-container",
+      start: "top 80%",
+      end: "top 20%",
 
-          // 🌸 TODO APARECE EXACTAMENTE AL MISMO TIEMPO usando "<"
-          tl.to("#flores-itinerario", {
-            opacity: 1,
-            y: 0,
-            scale: 1,
-            duration: 1.2,
-            ease: "back.out(1.5)",
-          })
-          .to("#titulo-itinerario", {
-            opacity: 1,
-            y: 0,
-            duration: 1,
-            ease: "power2.out",
-          }, "<")
-          .to("#linea-central", {
+      onEnter: () => {
+        const tl = gsap.timeline();
+
+        tl.to(
+          ".linea-central",
+          {
             opacity: 1,
             scaleY: 1,
             duration: 1.5,
-            ease: "power2.inOut",
-          }, "<")
-          .to(".corazon-item", {
-            opacity: 1,
-            scale: 1,
-            duration: 1.2,
-            ease: "back.out(1.5)",
-          }, "<")
-          // 🍃 HOJAS EN LOS BORDES - AL MISMO TIEMPO
-          .to("#hoja-itinerario-izq", {
-            opacity: 1,
-            x: 0,
-            duration: 1.2,
             ease: "power2.out",
-          }, "<")
-          .to("#hoja-itinerario-der", {
-            opacity: 1,
-            x: 0,
-            duration: 1.2,
-            ease: "power2.out",
-          }, "<")
-          // 🖼️ TODAS LAS IMÁGENES IZQUIERDA - AL MISMO TIEMPO
-          .to(".imagen-izq", {
-            opacity: 1,
-            x: 0,
-            scale: 1,
-            duration: 1.3,
-            ease: "power3.out",
-          }, "<")
-          // 🖼️ TODAS LAS IMÁGENES DERECHA - AL MISMO TIEMPO
-          .to(".imagen-der", {
-            opacity: 1,
-            x: 0,
-            scale: 1,
-            duration: 1.3,
-            ease: "power3.out",
-          }, "<")
-          // ✨ TODOS LOS TEXTOS IZQUIERDA - AL MISMO TIEMPO
-          .to(".texto-izq", {
-            opacity: 1,
-            x: 0,
-            duration: 1.2,
-            ease: "power2.out",
-          }, "<")
-          // ✨ TODOS LOS TEXTOS DERECHA - AL MISMO TIEMPO
-          .to(".texto-der", {
-            opacity: 1,
-            x: 0,
-            duration: 1.2,
-            ease: "power2.out",
-          }, "<");
+            transformOrigin: "top center",
+          },
+          0,
+        )
+          .to(
+            ".corazon-item",
+            {
+              opacity: 1,
+              scale: 1,
+              duration: 0.8,
+              ease: "back.out(1.7)",
+            },
+            0,
+          )
+          .to(
+            ".evento-item",
+            {
+              opacity: 1,
+              duration: 1,
+              ease: "power3.out",
+            },
+            0,
+          )
+          .to(
+            "#hoja-itinerario-izq",
+            {
+              opacity: 1,
+              x: 0,
+              duration: 1.2,
+              ease: "power2.out",
+            },
+            0,
+          )
+          .to(
+            "#hoja-itinerario-der",
+            {
+              opacity: 1,
+              x: 0,
+              duration: 1.2,
+              ease: "power2.out",
+            },
+            0,
+          )
+          .to(
+            ".imagen-izq, .texto-izq",
+            {
+              x: 0,
+              duration: 1,
+              ease: "power3.out",
+            },
+            0,
+          )
+          .to(
+            ".imagen-der, .texto-der",
+            {
+              x: 0,
+              duration: 1,
+              ease: "power3.out",
+            },
+            0,
+          );
 
-          // 💫 Efecto de pulso sutil en corazones (después de aparecer)
-          gsap.to(".corazon-item", {
-            scale: 1.08,
-            duration: 2,
-            ease: "sine.inOut",
-            yoyo: true,
-            repeat: -1,
-            delay: 1.5,
-          });
+        // Animaciones de loop
+        gsap.to(".corazon-item", {
+          scale: 1.08,
+          duration: 2,
+          ease: "sine.inOut",
+          yoyo: true,
+          repeat: -1,
+          delay: 1.5,
+        });
 
-          // 🍃 Movimiento suave de las hojas (después de aparecer)
-          gsap.to("#hoja-itinerario-izq", {
-            y: -5,
-            rotation: -2,
-            duration: 2.5,
-            ease: "sine.inOut",
-            yoyo: true,
-            repeat: -1,
-            delay: 1.5,
-          });
+        gsap.to("#hoja-itinerario-izq", {
+          y: -5,
+          rotation: -2,
+          duration: 2.5,
+          ease: "sine.inOut",
+          yoyo: true,
+          repeat: -1,
+          delay: 1.5,
+        });
 
-          gsap.to("#hoja-itinerario-der", {
-            y: -5,
-            rotation: 2,
-            duration: 2.5,
-            ease: "sine.inOut",
-            yoyo: true,
-            repeat: -1,
-            delay: 1.7,
-          });
-        },
-        onLeaveBack: () => {
-          // Salida simultánea
-          const tl = gsap.timeline();
-          
-          tl.to("#flores-itinerario, #titulo-itinerario, #linea-central, .corazon-item, #hoja-itinerario-izq, #hoja-itinerario-der, .imagen-izq, .imagen-der, .texto-izq, .texto-der", {
+        gsap.to("#hoja-itinerario-der", {
+          y: -5,
+          rotation: 2,
+          duration: 2.5,
+          ease: "sine.inOut",
+          yoyo: true,
+          repeat: -1,
+          delay: 1.7,
+        });
+      },
+
+      onLeaveBack: () => {
+        const tl = gsap.timeline();
+
+        tl.to(
+          ".linea-central, .corazon-item, .evento-item",
+          {
             opacity: 0,
-            duration: 0.6,
+            duration: 0.4,
             ease: "power2.in",
-          })
-          .to("#flores-itinerario", {
-            y: -30,
-            scale: 0.8,
-            duration: 0.6,
-          }, "<")
-          .to("#titulo-itinerario", {
-            y: -20,
-            duration: 0.6,
-          }, "<")
-          .to("#linea-central", {
-            scaleY: 0,
-            duration: 0.6,
-          }, "<")
-          .to(".corazon-item", {
-            scale: 0,
-            duration: 0.6,
-          }, "<")
-          .to("#hoja-itinerario-izq", {
-            x: -30,
-            duration: 0.6,
-          }, "<")
-          .to("#hoja-itinerario-der", {
-            x: 30,
-            duration: 0.6,
-          }, "<")
-          .to(".imagen-izq", {
-            x: -150,
-            scale: 0.7,
-            duration: 0.6,
-          }, "<")
-          .to(".imagen-der", {
-            x: 150,
-            scale: 0.7,
-            duration: 0.6,
-          }, "<")
-          .to(".texto-izq", {
-            x: -100,
-            duration: 0.6,
-          }, "<")
-          .to(".texto-der", {
-            x: 100,
-            duration: 0.6,
-          }, "<");
-        },
-      });
-
-      console.log("📅❤️✨🍃 ¡Animación con 8 eventos activada!");
+          },
+          0,
+        )
+          .to(
+            ".linea-central",
+            {
+              scaleY: 0,
+              duration: 0.4,
+            },
+            0,
+          )
+          .to(
+            ".corazon-item",
+            {
+              scale: 0,
+              duration: 0.4,
+            },
+            0,
+          )
+          .to(
+            "#hoja-itinerario-izq",
+            {
+              opacity: 0,
+              x: -30,
+              duration: 0.4,
+            },
+            0,
+          )
+          .to(
+            "#hoja-itinerario-der",
+            {
+              opacity: 0,
+              x: 30,
+              duration: 0.4,
+            },
+            0,
+          )
+          .to(
+            ".imagen-izq, .texto-izq",
+            {
+              x: -60,
+              duration: 0.4,
+            },
+            0,
+          )
+          .to(
+            ".imagen-der, .texto-der",
+            {
+              x: 60,
+              duration: 0.4,
+            },
+            0,
+          );
+      },
     });
+  };
+
+  if (typeof window !== "undefined") {
+    document.addEventListener("DOMContentLoaded", initItinerario);
+    document.addEventListener("astro:page-load", initItinerario);
   }
 </script>
 
 <style>
+  .font-charm {
+    font-family: "Charm", cursive;
+  }
+
   /* Transiciones suaves para hover */
   .evento-item p {
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -461,7 +653,7 @@
     text-shadow: 0 2px 8px rgba(212, 175, 55, 0.3);
   }
 
-  /* Corazones con efecto de brillo elegante */
+  /* Corazones con efecto de brillo */
   .corazon-item {
     filter: drop-shadow(0 4px 12px rgba(212, 175, 55, 0.5));
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -472,24 +664,30 @@
     filter: drop-shadow(0 8px 20px rgba(212, 175, 55, 0.7));
   }
 
-  /* Mejora visual de imágenes */
-  img {
-    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.12));
-    transition: filter 0.3s ease;
+  /* ⭐ FILTRO DORADO #e4b121 PARA LAS IMÁGENES */
+  .dorado-filter {
+    filter: brightness(0) saturate(100%) invert(73%) sepia(74%) saturate(514%)
+      hue-rotate(1deg) brightness(97%) contrast(94%)
+      drop-shadow(0 4px 10px rgba(228, 177, 33, 0.2));
+    transition:
+      filter 0.3s ease,
+      transform 0.3s ease;
   }
 
-  img:hover {
-    filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.18));
+  .dorado-filter:hover {
+    filter: brightness(0) saturate(100%) invert(73%) sepia(74%) saturate(514%)
+      hue-rotate(1deg) brightness(97%) contrast(94%)
+      drop-shadow(0 6px 16px rgba(228, 177, 33, 0.35));
   }
 
-  /* Animación sutil de brillo en la línea */
-  #linea-central {
+  /* Línea central con brillo */
+  .linea-central {
     box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
   }
 
   /* Hojas con transición suave */
-  #hoja-itinerario-izq,
-  #hoja-itinerario-der {
+  .hoja-izq,
+  .hoja-der {
     will-change: transform;
   }
 </style>

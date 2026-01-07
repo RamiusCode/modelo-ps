@@ -1,0 +1,188 @@
+---
+// Pase.astro
+// Componente de pases para invitación de 15 años
+// Temática La Princesa y el Sapo - Diseño elegante y compacto
+---
+
+<section class="py-6 px-4">
+    <div class="max-w-md mx-auto">
+        <!-- 🌸 SEPARADOR SUPERIOR -->
+        <div class="flex justify-center mb-6" id="tarjeta-pase">
+            <img
+                src="/imagenes/SeparadorDos.webp"
+                alt="Separador decorativo"
+                class="w-40 md:w-40 lg:w-40 h-auto object-contain"
+            />
+        </div>
+        <!-- TARJETA DE PASE -->
+        <div
+            id="tarjeta-pase"
+            class="bg-gradient-to-br from-white to-[#FFF9E6] rounded-2xl p-6 border-2 border-[#D4AF37]"
+        >
+            <!-- TÍTULO -->
+            <h2
+                id="titulo-pase"
+                class="font-serif text-lg md:text-xl text-[#D4AF37] font-bold text-center mb-2 tracking-wide uppercase"
+            >
+                Pases Para
+            </h2>
+
+            <!-- CONTENEDOR DE CÍRCULOS -->
+            <div
+                id="circulos-container"
+                class="flex justify-center items-center gap-3 my-5"
+            >
+                <!-- CÍRCULO 1 - ACTIVO -->
+                <div class="flex flex-col items-center">
+                    <div
+                        class="w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#6B8E6B] flex items-center justify-center transform transition-transform hover:scale-105"
+                    >
+                        <span
+                            class="font-serif text-xl md:text-2xl text-white font-bold"
+                            >1</span
+                        >
+                    </div>
+                </div>
+
+                <!-- CÍRCULO 2 - INACTIVO -->
+                <div class="flex flex-col items-center opacity-30">
+                    <div
+                        class="w-12 h-12 md:w-14 md:h-14 rounded-full border-2 border-[#6B8E6B] flex items-center justify-center bg-white"
+                    >
+                        <span
+                            class="font-serif text-xl md:text-2xl text-[#6B8E6B] font-bold"
+                            >2</span
+                        >
+                    </div>
+                </div>
+
+                <!-- CÍRCULO 4 - INACTIVO -->
+                <div class="flex flex-col items-center opacity-30">
+                    <div
+                        class="w-12 h-12 md:w-14 md:h-14 rounded-full border-2 border-[#6B8E6B] flex items-center justify-center bg-white"
+                    >
+                        <span
+                            class="font-serif text-xl md:text-2xl text-[#6B8E6B] font-bold"
+                            >4</span
+                        >
+                    </div>
+                </div>
+
+                <!-- CÍRCULO 5 - INACTIVO -->
+                <div class="flex flex-col items-center opacity-30">
+                    <div
+                        class="w-12 h-12 md:w-14 md:h-14 rounded-full border-2 border-[#6B8E6B] flex items-center justify-center bg-white"
+                    >
+                        <span
+                            class="font-serif text-xl md:text-2xl text-[#6B8E6B] font-bold"
+                            >5</span
+                        >
+                    </div>
+                </div>
+            </div>
+
+            <!-- TEXTO EXPLICATIVO -->
+            <p
+                id="texto-explicativo"
+                class="font-serif text-base md:text-lg text-[#6B8E6B] text-center leading-relaxed"
+            >
+                Un pase reservado para ti
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- 🎬 ANIMACIONES CON GSAP                                     -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<script>
+    import { gsap } from "gsap";
+    import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    if (typeof window !== "undefined") {
+        document.addEventListener("DOMContentLoaded", () => {
+            console.log("🎟️ Iniciando animaciones de pases...");
+
+            // 🎯 ESTADO INICIAL - Todo oculto
+            gsap.set("#tarjeta-pase", { opacity: 0, y: 20 });
+            gsap.set("#titulo-pase", { opacity: 0, y: -10 });
+            gsap.set("#circulos-container > div", { opacity: 0, scale: 0.8 });
+            gsap.set("#texto-explicativo", { opacity: 0 });
+
+            // 📍 SCROLLTRIGGER PARA ACTIVAR LA ANIMACIÓN
+            ScrollTrigger.create({
+                trigger: "#tarjeta-pase",
+                start: "top 85%",
+                end: "top 20%",
+
+                onEnter: () => {
+                    console.log("✨ Tarjeta de pases apareciendo...");
+                    animarPases();
+                },
+
+                onLeaveBack: () => {
+                    console.log("👋 Ocultando tarjeta de pases...");
+                    ocultarPases();
+                },
+            });
+
+            // 🎬 ANIMACIÓN DE ENTRADA
+            function animarPases() {
+                const tl = gsap.timeline();
+
+                tl.to("#tarjeta-pase", {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.8,
+                    ease: "power2.out",
+                })
+                    .to(
+                        "#titulo-pase",
+                        {
+                            opacity: 1,
+                            y: 0,
+                            duration: 0.6,
+                            ease: "power2.out",
+                        },
+                        "-=0.4",
+                    )
+                    .to(
+                        "#circulos-container > div",
+                        {
+                            opacity: (i) => (i === 0 ? 1 : 0.3),
+                            scale: 1,
+                            duration: 0.7,
+                            stagger: 0.1,
+                            ease: "back.out(1.3)",
+                        },
+                        "-=0.3",
+                    )
+                    .to(
+                        "#texto-explicativo",
+                        {
+                            opacity: 1,
+                            duration: 0.6,
+                            ease: "power2.out",
+                        },
+                        "-=0.2",
+                    );
+            }
+
+            // 🔙 ANIMACIÓN DE SALIDA
+            function ocultarPases() {
+                const tl = gsap.timeline();
+
+                tl.to("#tarjeta-pase", {
+                    opacity: 0,
+                    y: 20,
+                    duration: 0.5,
+                    ease: "power2.in",
+                });
+            }
+
+            console.log("✅ Sección de Pases inicializada correctamente");
+        });
+    }
+</script>

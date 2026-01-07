@@ -1,12 +1,10 @@
 ---
 // CodigoVestimenta.astro
-// Temática La Princesa y el Sapo
-// Colores: Dorado #D4AF37 y Verde #6B8E6B
+// Versión con diseño de dos columnas como imagen 2
 ---
 
 <section class="py-4 px-4">
-  <div class="max-w-xl mx-auto text-center">
-   
+  <div class="max-w-4xl mx-auto text-center">
     <!-- 🌸 SEPARADOR SUPERIOR -->
     <div class="flex justify-center mb-6" id="separador-superior">
       <img
@@ -15,9 +13,12 @@
         class="w-40 md:w-40 lg:w-40 h-auto object-contain"
       />
     </div>
-    
+
     <!-- TÍTULO CON COCODRILOS A LOS LADOS -->
-    <div class="mb-4 flex items-center justify-center gap-1 md:gap-1" id="titulo-vestimenta">
+    <div
+      class="mb-4 flex items-center justify-center gap-1 md:gap-1"
+      id="titulo-vestimenta"
+    >
       <!-- 🐊 Cocodrilo Izquierdo -->
       <img
         src="/imagenes/IconoCocodrilo.webp"
@@ -25,12 +26,14 @@
         class="w-16 h-16 md:w-16 md:h-16 lg:w-16 lg:h-16 object-contain"
         id="cocodrilo-izq"
       />
-      
+
       <!-- Título -->
-      <h2 class="font-charm text-2xl md:text-2xl lg:text-2xl text-[#D4AF37] font-bold ">
-        CÓDIGO DE VESTIMENTA
+      <h2
+        class="font-charm text-2xl md:text-2xl lg:text-2xl text-[#D4AF37] font-bold"
+      >
+        Código de vestimenta
       </h2>
-      
+
       <!-- 🐊 Cocodrilo Derecho -->
       <img
         src="/imagenes/IconoCocodriloDerecho.webp"
@@ -39,27 +42,82 @@
         id="cocodrilo-der"
       />
     </div>
-    
-    <!-- 👔 IMAGEN VESTIMENTA -->
-    <div class="flex justify-center mb-4" id="imagen-vestimenta">
-      <img
-        src="/imagenes/CodigoVestimentaVerde.webp"
-        alt="Código de vestimenta"
-        class="w-20 h-auto md:w-20 lg:w-20 object-contain"
-      />
-    </div>
-    
-    <!-- DESCRIPCIÓN -->
-    <div class="mb-3" id="descripcion-vestimenta">
-      <p class="font-charm text-2xl md:text-2xl text-[#6B8E6B] font-bold leading-relaxed">
-        Guapos y Divinas
+
+    <!-- SUBTÍTULO FORMAL -->
+    <div class="mb-4" id="subtitulo-formal">
+      <p
+        class="font-charm text-2xl md:text-3xl text-[#6B8E6B] font-normal tracking-wide uppercase"
+      >
+        Formal
       </p>
     </div>
-    
-    <!-- NOTA IMPORTANTE -->
-    <div class="mb-2" id="nota-vestimenta">
-      <p class="font-charm text-xl md:text-xl text-[#D4AF37] leading-relaxed">
-        Color verde reservado para la quinceañera
+
+    <!-- CONTENEDOR PRINCIPAL: DAMAS Y VARONES EN DOS COLUMNAS -->
+    <div
+      class="grid grid-cols-2 gap-6 md:gap-12 max-w-2xl mx-auto mb-2"
+      id="contenedor-vestimenta"
+    >
+      <!-- COLUMNA IZQUIERDA: DAMAS -->
+      <div class="flex flex-col items-center" id="seccion-damas">
+        <!-- Título Damas -->
+        <h3
+          class="font-charm text-xl md:text-2xl lg:text-3xl text-[#D4AF37] mb-2 italic"
+        >
+          Damas
+        </h3>
+
+        <!-- Imagen Vestido -->
+        <div class="mb-2">
+          <img
+            src="/imagenes/mujer.png"
+            alt="Vestido para damas"
+            class="w-24 h-24 md:w-32 md:h-32 lg:w-40 lg:h-40 object-contain"
+          />
+        </div>
+
+        <!-- Texto DIVINAS -->
+        <p
+          class="font-charm text-base md:text-xl lg:text-2xl text-[#6B8E6B] font-normal tracking-wider uppercase"
+        >
+          Divinas
+        </p>
+      </div>
+
+      <!-- COLUMNA DERECHA: VARONES -->
+      <div class="flex flex-col items-center" id="seccion-varones">
+        <!-- Título Varones -->
+        <h3
+          class="font-charm text-xl md:text-2xl lg:text-3xl text-[#D4AF37] mb-2"
+        >
+          Varones
+        </h3>
+
+        <!-- Imagen Traje -->
+        <div class="mb-2">
+          <img
+            src="/imagenes/hombres.png"
+            alt="Traje para varones"
+            class="w-24 h-24 md:w-32 md:h-32 lg:w-40 lg:h-40 object-contain"
+          />
+        </div>
+
+        <!-- Texto GUAPOS -->
+        <p
+          class="font-charm text-base md:text-xl lg:text-2xl text-[#6B8E6B] font-normal tracking-wider uppercase"
+        >
+          Guapos
+        </p>
+      </div>
+    </div>
+
+    <!-- NOTA DE COLORES RESERVADOS -->
+    <div class="mt-2" id="nota-colores">
+      <p
+        class="font-charm text-lg md:text-lg lg:text-xl text-[#D4AF37] leading-relaxed font-bold"
+      >
+        Color reservado para la Quinceañera: <br /><span class="text-[#6B8E6B]"
+          >Verde claro</span
+        >
       </p>
     </div>
   </div>
@@ -68,128 +126,207 @@
 <script>
   import { gsap } from "gsap";
   import { ScrollTrigger } from "gsap/ScrollTrigger";
- 
+
   gsap.registerPlugin(ScrollTrigger);
- 
+
   if (typeof window !== "undefined") {
     document.addEventListener("DOMContentLoaded", () => {
       console.log("👔 Iniciando animaciones de Código de Vestimenta...");
-      
+
       // 🎯 ESTADO INICIAL - Todo oculto
       gsap.set("#separador-superior", { opacity: 0, scale: 0.8 });
       gsap.set("#titulo-vestimenta", { opacity: 0, y: 30 });
       gsap.set("#cocodrilo-izq", { x: -30, rotation: -15 });
       gsap.set("#cocodrilo-der", { x: 30, rotation: 15 });
-      gsap.set("#imagen-vestimenta", { opacity: 0, scale: 0.8 });
-      gsap.set("#descripcion-vestimenta", { opacity: 0, scale: 0.9 });
-      gsap.set("#nota-vestimenta", { opacity: 0, scale: 0.9 });
-     
+      gsap.set("#subtitulo-formal", { opacity: 0, y: 20 });
+      gsap.set("#seccion-damas", { opacity: 0, x: -50 });
+      gsap.set("#seccion-varones", { opacity: 0, x: 50 });
+      gsap.set("#nota-colores", { opacity: 0, y: 20 });
+
       // ✨ ANIMACIÓN SIMULTÁNEA CON SCROLLTRIGGER
       ScrollTrigger.create({
         trigger: "#separador-superior",
         start: "top 85%",
         end: "top 20%",
-        
+
         onEnter: () => {
           console.log("✨ Código de vestimenta apareciendo...");
           animarEntrada();
         },
-        
+
         onLeaveBack: () => {
           console.log("👋 Ocultando código de vestimenta...");
           animarSalida();
         },
       });
-      
+
       // 🎬 ANIMACIÓN DE ENTRADA SIMULTÁNEA
       function animarEntrada() {
         const tl = gsap.timeline();
-        
+
         // TODO aparece al mismo tiempo
-        tl.to("#separador-superior, #titulo-vestimenta, #imagen-vestimenta, #descripcion-vestimenta, #nota-vestimenta", {
-          opacity: 1,
-          duration: 1.2,
-          ease: "power2.out",
-        })
-        // Animaciones individuales (simultáneas)
-        .to("#separador-superior", {
-          scale: 1,
-          duration: 1.2,
-          ease: "back.out(1.5)",
-        }, "<")
-        .to("#titulo-vestimenta", {
-          y: 0,
-          duration: 1.2,
-          ease: "power3.out",
-        }, "<")
-        .to("#cocodrilo-izq", {
-          x: 0,
-          rotation: 0,
-          duration: 1.2,
-          ease: "back.out(1.5)",
-        }, "<")
-        .to("#cocodrilo-der", {
-          x: 0,
-          rotation: 0,
-          duration: 1.2,
-          ease: "back.out(1.5)",
-        }, "<")
-        .to("#imagen-vestimenta", {
-          scale: 1,
-          duration: 1.2,
-          ease: "back.out(1.5)",
-        }, "<")
-        .to("#descripcion-vestimenta, #nota-vestimenta", {
-          scale: 1,
-          duration: 1.2,
-          ease: "back.out(1.2)",
-        }, "<");
+        tl.to(
+          "#separador-superior",
+          {
+            opacity: 1,
+            scale: 1,
+            duration: 1.2,
+            ease: "back.out(1.5)",
+          },
+          0,
+        )
+          .to(
+            "#titulo-vestimenta",
+            {
+              opacity: 1,
+              y: 0,
+              duration: 1.2,
+              ease: "power3.out",
+            },
+            0,
+          )
+          .to(
+            "#cocodrilo-izq",
+            {
+              x: 0,
+              rotation: 0,
+              duration: 1.2,
+              ease: "back.out(1.5)",
+            },
+            0,
+          )
+          .to(
+            "#cocodrilo-der",
+            {
+              x: 0,
+              rotation: 0,
+              duration: 1.2,
+              ease: "back.out(1.5)",
+            },
+            0,
+          )
+          .to(
+            "#subtitulo-formal",
+            {
+              opacity: 1,
+              y: 0,
+              duration: 1,
+              ease: "power2.out",
+            },
+            0.2,
+          )
+          .to(
+            "#seccion-damas",
+            {
+              opacity: 1,
+              x: 0,
+              duration: 1.2,
+              ease: "power3.out",
+            },
+            0.4,
+          )
+          .to(
+            "#seccion-varones",
+            {
+              opacity: 1,
+              x: 0,
+              duration: 1.2,
+              ease: "power3.out",
+            },
+            0.4,
+          )
+          .to(
+            "#nota-colores",
+            {
+              opacity: 1,
+              y: 0,
+              duration: 1,
+              ease: "power2.out",
+            },
+            0.6,
+          );
       }
-      
+
       // 🔙 ANIMACIÓN DE SALIDA SIMULTÁNEA
       function animarSalida() {
         const tl = gsap.timeline();
-        
-        tl.to("#separador-superior, #titulo-vestimenta, #imagen-vestimenta, #descripcion-vestimenta, #nota-vestimenta", {
-          opacity: 0,
-          duration: 0.6,
-          ease: "power2.in",
-        })
-        .to("#separador-superior", {
-          scale: 0.8,
-          duration: 0.6,
-          ease: "power2.in",
-        }, "<")
-        .to("#titulo-vestimenta", {
-          y: 30,
-          duration: 0.6,
-          ease: "power2.in",
-        }, "<")
-        .to("#cocodrilo-izq", {
-          x: -30,
-          rotation: -15,
-          duration: 0.6,
-          ease: "power2.in",
-        }, "<")
-        .to("#cocodrilo-der", {
-          x: 30,
-          rotation: 15,
-          duration: 0.6,
-          ease: "power2.in",
-        }, "<")
-        .to("#imagen-vestimenta", {
-          scale: 0.8,
-          duration: 0.6,
-          ease: "power2.in",
-        }, "<")
-        .to("#descripcion-vestimenta, #nota-vestimenta", {
-          scale: 0.9,
-          duration: 0.6,
-          ease: "power2.in",
-        }, "<");
+
+        tl.to(
+          "#separador-superior, #titulo-vestimenta, #subtitulo-formal, #seccion-damas, #seccion-varones, #nota-colores",
+          {
+            opacity: 0,
+            duration: 0.6,
+            ease: "power2.in",
+          },
+          0,
+        )
+          .to(
+            "#separador-superior",
+            {
+              scale: 0.8,
+              duration: 0.6,
+            },
+            0,
+          )
+          .to(
+            "#titulo-vestimenta",
+            {
+              y: 30,
+              duration: 0.6,
+            },
+            0,
+          )
+          .to(
+            "#cocodrilo-izq",
+            {
+              x: -30,
+              rotation: -15,
+              duration: 0.6,
+            },
+            0,
+          )
+          .to(
+            "#cocodrilo-der",
+            {
+              x: 30,
+              rotation: 15,
+              duration: 0.6,
+            },
+            0,
+          )
+          .to(
+            "#subtitulo-formal, #nota-colores",
+            {
+              y: 20,
+              duration: 0.6,
+            },
+            0,
+          )
+          .to(
+            "#seccion-damas",
+            {
+              x: -50,
+              duration: 0.6,
+            },
+            0,
+          )
+          .to(
+            "#seccion-varones",
+            {
+              x: 50,
+              duration: 0.6,
+            },
+            0,
+          );
       }
-      
+
       console.log("👔 Sección de Código de Vestimenta inicializada");
     });
   }
 </script>
+
+<style>
+  .font-charm {
+    font-family: "Charm", cursive;
+  }
+</style>
