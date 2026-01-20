@@ -1,187 +1,220 @@
-<!-- VERSIÓN SIN FONDO --><!-- <section class="py-4 md:py-16 relative overflow-hidden"> -->
-<section class="pt-8 pb-6 relative overflow-hidden"></section>
-<div class="max-w-6xl mx-auto relative px-4">
-  <!-- TEXTO SUPERIOR ELEGANTE -->
-  <div class="text-center mb-6 sm:mb-8" id="texto-superior">
-    <h3
-      class="font-great-vibes text-3xl sm:text-3xl md:text-3xl lg:text-3xl text-[#6B8E6B] mb-2"
-    >
-      Nuestro día mágico
-    </h3>
-    <p
-      class="font-charm text-base sm:text-base md:text-base text-[#D4AF37] italic flex items-center justify-center gap-2 sm:gap-3"
-    >
-      <img
-        src="imagenes/Sapo.webp"
-        alt="Sapo"
-        class="w-6 h-6 sm:w-6 sm:h-6 object-contain animate-bounce"
-        style="animation-duration: 2s;"
-      />
-      Un cuento que comienza
-      <img
-        src="imagenes/Sapo.webp"
-        alt="Sapo"
-        class="w-6 h-6 sm:w-6 sm:h-6 object-contain animate-bounce"
-        style="animation-duration: 2s; animation-delay: 0.3s;"
-      />
-    </p>
-  </div>
-
-  <!-- CONTENEDOR PRINCIPAL -->
-  <div class="relative">
-    <!-- DECORACIÓN IZQUIERDA: HOJAS DE NENÚFAR -->
-    <div
-      class="absolute left-0 top-1/2 -translate-y-1/2 w-20 sm:w-20 md:w-20 pointer-events-none z-0 -ml-10 sm:-ml-10 md:-ml-10"
-      id="deco-izq"
-    >
-      <svg viewBox="0 0 120 120" class="w-full h-auto opacity-70">
-        <ellipse cx="60" cy="60" rx="50" ry="35" fill="#6B8E6B" opacity="0.6"
-        ></ellipse>
-        <ellipse cx="60" cy="60" rx="40" ry="28" fill="#D4AF37" opacity="0.3"
-        ></ellipse>
-        <circle cx="60" cy="60" r="12" fill="#D4AF37" opacity="0.8"></circle>
-      </svg>
+<!-- VERSIÓN SIN FONDO -->
+<section class="pt-8 pb-6 relative overflow-hidden">
+  <div class="max-w-6xl mx-auto relative px-4">
+    <!-- TEXTO SUPERIOR ELEGANTE -->
+    <div class="text-center mb-6 sm:mb-8" id="texto-superior">
+      <h3
+        class="font-great-vibes text-3xl sm:text-3xl md:text-3xl lg:text-3xl text-[#6B8E6B] mb-2"
+      >
+        Nuestro día mágico
+      </h3>
+      <p
+        class="font-charm text-base sm:text-base md:text-base text-[#D4AF37] italic flex items-center justify-center gap-2 sm:gap-3"
+      >
+        <img
+          src="imagenes/Sapo.webp"
+          alt="Sapo"
+          class="w-6 h-6 sm:w-6 sm:h-6 object-contain animate-bounce"
+          style="animation-duration: 2s;"
+        />
+        Un cuento que comienza
+        <img
+          src="imagenes/Sapo.webp"
+          alt="Sapo"
+          class="w-6 h-6 sm:w-6 sm:h-6 object-contain animate-bounce"
+          style="animation-duration: 2s; animation-delay: 0.3s;"
+        />
+      </p>
     </div>
 
-    <!-- DECORACIÓN DERECHA: HOJAS DE NENÚFAR -->
-    <div
-      class="absolute right-0 top-1/2 -translate-y-1/2 w-20 sm:w-20 md:w-20 pointer-events-none z-0 -mr-10 sm:-mr-10 md:-mr-10"
-      id="deco-der"
-    >
-      <svg viewBox="0 0 120 120" class="w-full h-auto opacity-70">
-        <ellipse cx="60" cy="60" rx="50" ry="35" fill="#6B8E6B" opacity="0.6"
-        ></ellipse>
-        <ellipse cx="60" cy="60" rx="40" ry="28" fill="#D4AF37" opacity="0.3"
-        ></ellipse>
-        <circle cx="60" cy="60" r="12" fill="#D4AF37" opacity="0.8"></circle>
-      </svg>
-    </div>
+    <!-- CONTENEDOR PRINCIPAL -->
+    <div class="relative">
+      <!-- DECORACIÓN IZQUIERDA: HOJAS DE NENÚFAR -->
+      <div
+        class="absolute left-0 top-1/2 -translate-y-1/2 w-20 sm:w-20 md:w-20 pointer-events-none z-0 -ml-10 sm:-ml-10 md:-ml-10"
+        id="deco-izq"
+      >
+        <svg viewBox="0 0 120 120" class="w-full h-auto opacity-70">
+          <ellipse cx="60" cy="60" rx="50" ry="35" fill="#6B8E6B" opacity="0.6"
+          ></ellipse>
+          <ellipse cx="60" cy="60" rx="40" ry="28" fill="#D4AF37" opacity="0.3"
+          ></ellipse>
+          <circle cx="60" cy="60" r="12" fill="#D4AF37" opacity="0.8"></circle>
+        </svg>
+      </div>
 
-    <!-- CARD PRINCIPAL CON GLASS EFFECT MEJORADO -->
-    <div
-      class="relative card-glass rounded-[2rem] sm:rounded-[2rem] border border-[#6B8E6B]/20 py-8 sm:py-8 md:py-8 px-8 sm:px-8 md:px-8 z-10 max-w-sm sm:max-w-sm md:max-w-sm mx-auto shadow-2xl"
-      id="card-contador"
-    >
-      <!-- CONTADOR -->
-      <div class="relative" id="contador-container">
-        <div class="flex items-center justify-center gap-3 sm:gap-3 md:gap-3">
-          <!-- DÍAS -->
-          <div class="flex flex-col items-center grupo-tiempo">
-            <div
-              class="font-charm text-4xl sm:text-4xl md:text-4xl lg:text-4xl font-bold leading-none numero-uniforme"
-              id="dias"
-            >
-              00
+      <!-- DECORACIÓN DERECHA: HOJAS DE NENÚFAR -->
+      <div
+        class="absolute right-0 top-1/2 -translate-y-1/2 w-20 sm:w-20 md:w-20 pointer-events-none z-0 -mr-10 sm:-mr-10 md:-mr-10"
+        id="deco-der"
+      >
+        <svg viewBox="0 0 120 120" class="w-full h-auto opacity-70">
+          <ellipse cx="60" cy="60" rx="50" ry="35" fill="#6B8E6B" opacity="0.6"
+          ></ellipse>
+          <ellipse cx="60" cy="60" rx="40" ry="28" fill="#D4AF37" opacity="0.3"
+          ></ellipse>
+          <circle cx="60" cy="60" r="12" fill="#D4AF37" opacity="0.8"></circle>
+        </svg>
+      </div>
+
+      <!-- CARD PRINCIPAL CON GLASS EFFECT MEJORADO -->
+      <div
+        class="relative card-glass rounded-[2rem] sm:rounded-[2rem] border border-[#6B8E6B]/20 py-8 sm:py-8 md:py-8 px-8 sm:px-8 md:px-8 z-10 max-w-sm sm:max-w-sm md:max-w-sm mx-auto shadow-2xl"
+        id="card-contador"
+      >
+        <!-- CONTADOR -->
+        <div class="relative" id="contador-container">
+          <div class="flex items-center justify-center gap-3 sm:gap-3 md:gap-3">
+            <!-- DÍAS -->
+            <div class="flex flex-col items-center grupo-tiempo">
+              <div
+                class="font-charm text-4xl sm:text-4xl md:text-4xl lg:text-4xl font-bold leading-none numero-uniforme"
+                id="dias"
+              >
+                00
+              </div>
+              <div
+                class="text-xs sm:text-xs md:text-xs lg:text-xs text-[#6B8E6B] uppercase tracking-widest font-charm mt-2 sm:mt-3 font-semibold"
+              >
+                Días
+              </div>
             </div>
+
+            <!-- SEPARADOR -->
             <div
-              class="text-xs sm:text-xs md:text-xs lg:text-xs text-[#6B8E6B] uppercase tracking-widest font-charm mt-2 sm:mt-3 font-semibold"
+              class="text-3xl sm:text-3xl md:text-3xl text-[#D4AF37]/50 font-thin separador"
             >
-              Días
+              :
+            </div>
+
+            <!-- HORAS -->
+            <div class="flex flex-col items-center grupo-tiempo">
+              <div
+                class="font-charm text-4xl sm:text-4xl md:text-4xl lg:text-4xl font-bold leading-none numero-uniforme"
+                id="horas"
+              >
+                00
+              </div>
+              <div
+                class="text-xs sm:text-xs md:text-xs lg:text-xs text-[#6B8E6B] uppercase tracking-widest font-charm mt-2 sm:mt-3 font-semibold"
+              >
+                Horas
+              </div>
+            </div>
+
+            <div
+              class="text-3xl sm:text-3xl md:text-3xl text-[#D4AF37]/50 font-thin separador"
+            >
+              :
+            </div>
+
+            <!-- MINUTOS -->
+            <div class="flex flex-col items-center grupo-tiempo">
+              <div
+                class="font-charm text-4xl sm:text-4xl md:text-4xl lg:text-4xl font-bold leading-none numero-uniforme"
+                id="minutos"
+              >
+                00
+              </div>
+              <div
+                class="text-xs sm:text-xs md:text-xs lg:text-xs text-[#6B8E6B] uppercase tracking-widest font-charm mt-2 sm:mt-3 font-semibold"
+              >
+                Minutos
+              </div>
+            </div>
+
+            <div
+              class="text-3xl sm:text-3xl md:text-3xl text-[#D4AF37]/50 font-thin separador"
+            >
+              :
+            </div>
+
+            <!-- SEGUNDOS -->
+            <div class="flex flex-col items-center grupo-tiempo">
+              <div
+                class="font-charm text-4xl sm:text-4xl md:text-4xl lg:text-4xl font-bold leading-none numero-uniforme"
+                id="segundos"
+              >
+                00
+              </div>
+              <div
+                class="text-xs sm:text-xs md:text-xs lg:text-xs text-[#6B8E6B] uppercase tracking-widest font-charm mt-2 sm:mt-3 font-semibold"
+              >
+                Segundos
+              </div>
             </div>
           </div>
 
-          <!-- SEPARADOR -->
-          <div
-            class="text-3xl sm:text-3xl md:text-3xl text-[#D4AF37]/50 font-thin separador"
-          >
-            :
-          </div>
-
-          <!-- HORAS -->
-          <div class="flex flex-col items-center grupo-tiempo">
+          <!-- MENSAJE INFERIOR -->
+          <div class="text-center mt-8 sm:mt-10">
             <div
-              class="font-charm text-4xl sm:text-4xl md:text-4xl lg:text-4xl font-bold leading-none numero-uniforme"
-              id="horas"
+              class="inline-flex items-center gap-3 bg-gradient-to-r from-[#6B8E6B]/10 to-[#D4AF37]/10 backdrop-blur-sm rounded-full px-6 py-3 shadow-md"
             >
-              00
+              <img
+                src="/imagenes/FloresIndividuales.webp"
+                alt="Flor"
+                class="w-5 h-5 sm:w-6 sm:h-6 object-contain animate-pulse"
+              />
+              <p
+                class="font-charm text-sm sm:text-sm md:text-sm text-[#6B8E6B] font-medium"
+              >
+                Donde los sueños se vuelven realidad
+              </p>
+              <img
+                src="/imagenes/FloresIndividuales.webp"
+                alt="Flor"
+                class="w-5 h-5 sm:w-6 sm:h-6 object-contain animate-pulse"
+                style="animation-delay: 0.5s;"
+              />
             </div>
-            <div
-              class="text-xs sm:text-xs md:text-xs lg:text-xs text-[#6B8E6B] uppercase tracking-widest font-charm mt-2 sm:mt-3 font-semibold"
-            >
-              Horas
-            </div>
-          </div>
-
-          <div
-            class="text-3xl sm:text-3xl md:text-3xl text-[#D4AF37]/50 font-thin separador"
-          >
-            :
-          </div>
-
-          <!-- MINUTOS -->
-          <div class="flex flex-col items-center grupo-tiempo">
-            <div
-              class="font-charm text-4xl sm:text-4xl md:text-4xl lg:text-4xl font-bold leading-none numero-uniforme"
-              id="minutos"
-            >
-              00
-            </div>
-            <div
-              class="text-xs sm:text-xs md:text-xs lg:text-xs text-[#6B8E6B] uppercase tracking-widest font-charm mt-2 sm:mt-3 font-semibold"
-            >
-              Minutos
-            </div>
-          </div>
-
-          <div
-            class="text-3xl sm:text-3xl md:text-3xl text-[#D4AF37]/50 font-thin separador"
-          >
-            :
-          </div>
-
-          <!-- SEGUNDOS -->
-          <div class="flex flex-col items-center grupo-tiempo">
-            <div
-              class="font-charm text-4xl sm:text-4xl md:text-4xl lg:text-4xl font-bold leading-none numero-uniforme"
-              id="segundos"
-            >
-              00
-            </div>
-            <div
-              class="text-xs sm:text-xs md:text-xs lg:text-xs text-[#6B8E6B] uppercase tracking-widest font-charm mt-2 sm:mt-3 font-semibold"
-            >
-              Segundos
-            </div>
-          </div>
-        </div>
-
-        <!-- MENSAJE INFERIOR -->
-        <div class="text-center mt-8 sm:mt-10">
-          <div
-            class="inline-flex items-center gap-3 bg-gradient-to-r from-[#6B8E6B]/10 to-[#D4AF37]/10 backdrop-blur-sm rounded-full px-6 py-3 shadow-md"
-          >
-            <img
-              src="/imagenes/FloresIndividuales.webp"
-              alt="Flor"
-              class="w-5 h-5 sm:w-6 sm:h-6 object-contain animate-pulse"
-            />
-            <p
-              class="font-charm text-sm sm:text-sm md:text-sm text-[#6B8E6B] font-medium"
-            >
-              Donde los sueños se vuelven realidad
-            </p>
-            <img
-              src="/imagenes/FloresIndividuales.webp"
-              alt="Flor"
-              class="w-5 h-5 sm:w-6 sm:h-6 object-contain animate-pulse"
-              style="animation-delay: 0.5s;"
-            />
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
+</section>
 
 <script>
   import { gsap } from "gsap";
   import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+  // ═══════════════════════════════════════════════════════════
+  // ⚙️ CONFIGURACIÓN DE FECHA Y HORA DEL EVENTO
+  // ═══════════════════════════════════════════════════════════
+  const CONFIG_EVENTO = {
+    año: 2026, // Año del evento
+    mes: 4, // Mes (1=Enero, 2=Febrero, ..., 12=Diciembre)
+    dia: 4, // Día del mes
+    hora: 17, // Hora en formato 24h (0-23)
+    minutos: 0, // Minutos (0-59)
+    segundos: 0, // Segundos (0-59)
+  };
+
+  // EJEMPLOS PARA CAMBIAR FÁCILMENTE:
+  // Para 15 de Mayo 2027 a las 18:30:
+  // año: 2027, mes: 5, dia: 15, hora: 18, minutos: 30
+
+  // Para 20 de Diciembre 2026 a las 14:00:
+  // año: 2026, mes: 12, dia: 20, hora: 14, minutos: 0
+  // ═══════════════════════════════════════════════════════════
+
   gsap.registerPlugin(ScrollTrigger);
 
   if (typeof window !== "undefined") {
     document.addEventListener("DOMContentLoaded", () => {
-      const fechaEvento = new Date("2026-01-31T00:00:00").getTime();
+      // Construir la fecha del evento usando las constantes
+      const fechaEvento = new Date(
+        CONFIG_EVENTO.año,
+        CONFIG_EVENTO.mes - 1, // JavaScript cuenta los meses desde 0
+        CONFIG_EVENTO.dia,
+        CONFIG_EVENTO.hora,
+        CONFIG_EVENTO.minutos,
+        CONFIG_EVENTO.segundos,
+      ).getTime();
+
+      console.log(
+        `⏰ Contador configurado para: ${CONFIG_EVENTO.dia}/${CONFIG_EVENTO.mes}/${CONFIG_EVENTO.año} a las ${CONFIG_EVENTO.hora}:${String(CONFIG_EVENTO.minutos).padStart(2, "0")}`,
+      );
 
       function actualizarContador() {
         const ahora = new Date().getTime();
@@ -208,6 +241,9 @@
             minutosEl.textContent = String(minutos).padStart(2, "0");
           if (segundosEl)
             segundosEl.textContent = String(segundos).padStart(2, "0");
+        } else {
+          // El evento ya pasó
+          console.log("🎉 ¡El evento ya sucedió!");
         }
       }
 
@@ -290,6 +326,8 @@
         repeat: -1,
         stagger: 0.3,
       });
+
+      console.log("⏰✨ ¡Contador regresivo listo!");
     });
   }
 </script>

@@ -47,7 +47,7 @@
           <h3
             class="font-great-vibes text-4xl md:text-4xl text-[#D4AF37] font-normal"
           >
-            Enero
+            Abril
           </h3>
 
           <!-- Línea decorativa derecha -->
@@ -97,15 +97,14 @@
           </div>
         </div>
 
-        <!-- DÍAS DEL MES - ENERO 2026 (empieza en jueves) -->
+        <!-- DÍAS DEL MES - ABRIL 2026 (empieza en miércoles) -->
         <div class="grid grid-cols-7 gap-1 md:gap-2" id="dias-container">
-          <!-- Espacios vacíos hasta el jueves (día 1) -->
-          <div></div>
+          <!-- Espacios vacíos hasta el miércoles (día 1) -->
           <div></div>
           <div></div>
           <div></div>
 
-          <!-- Jueves 1 -->
+          <!-- Miércoles 1 -->
           <div
             class="aspect-square flex items-center justify-center rounded-lg hover:bg-[#D4AF37]/10 transition-all dia-calendario"
           >
@@ -125,13 +124,17 @@
             >
           </div>
 
-          <!-- Semana 2: del 4 al 10 -->
+          <!-- ⭐ SÁBADO 4 - DÍA ESPECIAL ⭐ -->
           <div
-            class="aspect-square flex items-center justify-center rounded-lg hover:bg-[#D4AF37]/10 transition-all dia-calendario"
+            class="aspect-square flex items-center justify-center rounded-lg bg-gradient-to-br from-[#D4AF37] to-[#e8c878] shadow-xl dia-calendario"
+            id="dia-especial"
           >
-            <span class="font-charm text-base md:text-lg text-[#6B8E6B]">4</span
+            <span class="font-charm text-2xl md:text-3xl text-white font-bold"
+              >4</span
             >
           </div>
+
+          <!-- Semana 2: del 5 al 11 -->
           <div
             class="aspect-square flex items-center justify-center rounded-lg hover:bg-[#D4AF37]/10 transition-all dia-calendario"
           >
@@ -169,8 +172,6 @@
               >10</span
             >
           </div>
-
-          <!-- Semana 3: del 11 al 17 -->
           <div
             class="aspect-square flex items-center justify-center rounded-lg hover:bg-[#D4AF37]/10 transition-all dia-calendario"
           >
@@ -178,6 +179,8 @@
               >11</span
             >
           </div>
+
+          <!-- Semana 3: del 12 al 18 -->
           <div
             class="aspect-square flex items-center justify-center rounded-lg hover:bg-[#D4AF37]/10 transition-all dia-calendario"
           >
@@ -220,8 +223,6 @@
               >17</span
             >
           </div>
-
-          <!-- Semana 4: del 18 al 24 -->
           <div
             class="aspect-square flex items-center justify-center rounded-lg hover:bg-[#D4AF37]/10 transition-all dia-calendario"
           >
@@ -229,6 +230,8 @@
               >18</span
             >
           </div>
+
+          <!-- Semana 4: del 19 al 25 -->
           <div
             class="aspect-square flex items-center justify-center rounded-lg hover:bg-[#D4AF37]/10 transition-all dia-calendario"
           >
@@ -271,8 +274,6 @@
               >24</span
             >
           </div>
-
-          <!-- Semana 5: del 25 al 31 -->
           <div
             class="aspect-square flex items-center justify-center rounded-lg hover:bg-[#D4AF37]/10 transition-all dia-calendario"
           >
@@ -280,6 +281,8 @@
               >25</span
             >
           </div>
+
+          <!-- Semana 5: del 26 al 30 -->
           <div
             class="aspect-square flex items-center justify-center rounded-lg hover:bg-[#D4AF37]/10 transition-all dia-calendario"
           >
@@ -315,32 +318,51 @@
               >30</span
             >
           </div>
-
-          <!-- ⭐ SÁBADO 31 - DÍA ESPECIAL ⭐ -->
-          <div
-            class="aspect-square flex items-center justify-center rounded-lg bg-gradient-to-br from-[#D4AF37] to-[#e8c878] shadow-xl dia-calendario"
-            id="dia-especial"
-          >
-            <span class="font-charm text-2xl md:text-3xl text-white font-bold"
-              >31</span
-            >
-          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Scripts sin cambios -->
+<!-- Scripts con Configuración Centralizada -->
 <script>
   import { gsap } from "gsap";
   import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  // ═══════════════════════════════════════════════════════════
+  // ⚙️ CONFIGURACIÓN DE FECHA - EDITA AQUÍ FÁCILMENTE
+  // ═══════════════════════════════════════════════════════════
+  const CONFIG_FECHA = {
+    mes: "Abril", // Nombre del mes
+    año: 2026, // Año
+    diaEspecial: 4, // Día de la boda (número)
+    primerDiaSemana: 3, // 0=Domingo, 1=Lunes, 2=Martes, 3=Miércoles, 4=Jueves, 5=Viernes, 6=Sábado
+    totalDias: 30, // Cantidad de días del mes
+  };
+
+  // GUÍA RÁPIDA PARA OTROS MESES:
+  // Enero: primerDiaSemana según el año
+  // Febrero: 28 o 29 días (29 en años bisiestos)
+  // Marzo: 31 días
+  // Abril: 30 días
+  // Mayo: 31 días
+  // Junio: 30 días
+  // Julio: 31 días
+  // Agosto: 31 días
+  // Septiembre: 30 días
+  // Octubre: 31 días
+  // Noviembre: 30 días
+  // Diciembre: 31 días
+  // ═══════════════════════════════════════════════════════════
 
   gsap.registerPlugin(ScrollTrigger);
 
   if (typeof window !== "undefined") {
     document.addEventListener("DOMContentLoaded", () => {
-      console.log("📅 Iniciando animaciones del calendario...");
+      console.log(
+        `📅 Calendario inicializado: ${CONFIG_FECHA.mes} ${CONFIG_FECHA.año}`,
+      );
+      console.log(`⭐ Día especial: ${CONFIG_FECHA.diaEspecial}`);
 
       gsap.set("#hojas-cal-izq", { opacity: 0, x: 60 });
       gsap.set("#hojas-cal-der", { opacity: 0, x: -60 });
@@ -420,6 +442,7 @@
         gsap.set(".dia-calendario", { opacity: 0, scale: 0.8 });
       }
 
+      // Animaciones continuas de las hojas
       gsap.to("#hojas-cal-izq", {
         y: -8,
         rotation: -3,
@@ -440,6 +463,7 @@
         delay: 1.2,
       });
 
+      // Animación del día especial
       gsap.to("#dia-especial", {
         scale: 1.05,
         duration: 2.5,
